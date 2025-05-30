@@ -23,7 +23,9 @@ final class SplashScreenViewModel: ObservableObject {
         Task {
             do {
                 try await useCase.startSplashTimer()
-                isLoading = false
+                withAnimation(.interpolatingSpring) {
+                    isLoading = false
+                }
             } catch {
                 
             }

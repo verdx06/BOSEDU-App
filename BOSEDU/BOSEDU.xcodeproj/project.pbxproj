@@ -25,6 +25,7 @@
 		8995CD0F2DE9C75F004C6604 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD0E2DE9C75F004C6604 /* Images.swift */; };
 		8995CD122DE9C87F004C6604 /* SplashScreenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD112DE9C87F004C6604 /* SplashScreenUseCase.swift */; };
 		8995CD162DE9CA54004C6604 /* SplashScreenDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD152DE9CA54004C6604 /* SplashScreenDI.swift */; };
+		8995CD1A2DE9CE1D004C6604 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD192DE9CE1D004C6604 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		8995CD0E2DE9C75F004C6604 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		8995CD112DE9C87F004C6604 /* SplashScreenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenUseCase.swift; sourceTree = "<group>"; };
 		8995CD152DE9CA54004C6604 /* SplashScreenDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenDI.swift; sourceTree = "<group>"; };
+		8995CD192DE9CE1D004C6604 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		8995CC732DE9A9BA004C6604 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8995CD182DE9CE05004C6604 /* Constants */,
 				8995CC852DE9B3BF004C6604 /* Font */,
 				8995CC742DE9A9C2004C6604 /* Extensions */,
 				8995CC752DE9A9C6004C6604 /* Enum */,
@@ -242,6 +245,14 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
+		8995CD182DE9CE05004C6604 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8995CD192DE9CE1D004C6604 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -327,6 +338,7 @@
 				8995CD0F2DE9C75F004C6604 /* Images.swift in Sources */,
 				8995CC822DE9B2AC004C6604 /* View.swift in Sources */,
 				8995CC6D2DE9A9A6004C6604 /* BOSEDUApp.swift in Sources */,
+				8995CD1A2DE9CE1D004C6604 /* Constants.swift in Sources */,
 				8995CC6E2DE9A9A6004C6604 /* OnboardingView.swift in Sources */,
 				8995CC7C2DE9AF20004C6604 /* SplashScreenView.swift in Sources */,
 				8995CC842DE9B3A7004C6604 /* RobotoFont.swift in Sources */,
