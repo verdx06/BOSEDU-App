@@ -14,19 +14,19 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack {
-            Color(Colors.splashBackground)
+            Color(Colors.primary80)
                 .ignoresSafeArea()
             VStack {
                 HStack(spacing: 0) {
-                    Image(Images.logo.rawValue)
+                    Image(Images.logo)
                         .padding(.trailing, 4)
                     Text(Constants.title)
                         .robotoFont(size: Constants.title_size, font: .extrabold)
-                        .foregroundStyle(Color.white)
+                        .foregroundStyle(Colors.neutral0)
                 }
                 Text(Constants.subtitle)
                     .robotoFont(size: Constants.subtitle_size)
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(Colors.neutral0)
                     .tracking(6)
             }
             

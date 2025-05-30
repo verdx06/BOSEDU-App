@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct QueueModel {
+    let id: Int
+    let title: String
+    let subtitle: String
+}

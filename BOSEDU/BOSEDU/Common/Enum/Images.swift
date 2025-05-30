@@ -7,8 +7,9 @@
 
 import Foundation
 
-enum Images: String {
+enum Images{
     
-    case logo = "logo"
+    static let logo = "logo"
+    static let logoBlue = "logoBlue"
     
 }

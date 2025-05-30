@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		899299AE2DE9DCB00054E7D4 /* QueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899299AD2DE9DCB00054E7D4 /* QueueModel.swift */; };
+		899299B12DE9E4EF0054E7D4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899299B02DE9E4EF0054E7D4 /* OnboardingViewModel.swift */; };
 		8995CC6D2DE9A9A6004C6604 /* BOSEDUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC6A2DE9A9A6004C6604 /* BOSEDUApp.swift */; };
 		8995CC6E2DE9A9A6004C6604 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC6B2DE9A9A6004C6604 /* OnboardingView.swift */; };
 		8995CC6F2DE9A9A6004C6604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8995CC682DE9A9A6004C6604 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		899299AD2DE9DCB00054E7D4 /* QueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueModel.swift; sourceTree = "<group>"; };
+		899299B02DE9E4EF0054E7D4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		8995CC592DE9A619004C6604 /* BOSEDU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOSEDU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8995CC682DE9A9A6004C6604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8995CC692DE9A9A6004C6604 /* BOSEDU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BOSEDU.entitlements; sourceTree = "<group>"; };
@@ -65,6 +69,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		899299AB2DE9DC9E0054E7D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				899299AC2DE9DCA40054E7D4 /* Queue */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		899299AC2DE9DCA40054E7D4 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				899299AD2DE9DCB00054E7D4 /* QueueModel.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		899299AF2DE9E4E00054E7D4 /* OnboardingViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				899299B02DE9E4EF0054E7D4 /* OnboardingViewModel.swift */,
+			);
+			path = OnboardingViewModel;
+			sourceTree = "<group>";
+		};
 		8995CC502DE9A618004C6604 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +136,7 @@
 		8995CC712DE9A9AA004C6604 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				899299AB2DE9DC9E0054E7D4 /* Models */,
 				8995CD102DE9C869004C6604 /* UseCase */,
 			);
 			path = Domain;
@@ -171,6 +200,7 @@
 		8995CC782DE9A9D8004C6604 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				899299AF2DE9E4E00054E7D4 /* OnboardingViewModel */,
 				8995CD0B2DE9C64D004C6604 /* SplashScreenViewModel */,
 			);
 			path = ViewModel;
@@ -338,7 +368,9 @@
 				8995CD0F2DE9C75F004C6604 /* Images.swift in Sources */,
 				8995CC822DE9B2AC004C6604 /* View.swift in Sources */,
 				8995CC6D2DE9A9A6004C6604 /* BOSEDUApp.swift in Sources */,
+				899299AE2DE9DCB00054E7D4 /* QueueModel.swift in Sources */,
 				8995CD1A2DE9CE1D004C6604 /* Constants.swift in Sources */,
+				899299B12DE9E4EF0054E7D4 /* OnboardingViewModel.swift in Sources */,
 				8995CC6E2DE9A9A6004C6604 /* OnboardingView.swift in Sources */,
 				8995CC7C2DE9AF20004C6604 /* SplashScreenView.swift in Sources */,
 				8995CC842DE9B3A7004C6604 /* RobotoFont.swift in Sources */,
