@@ -10,5 +10,6 @@ import Foundation
 struct QueueModel {
     let id: Int
     let title: String
-    let subtitle: String
+    let subtitle: String = "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit. Cras\nauctor commodo varius."
+    var image: String { "screen\(id)" }
 }

@@ -1,14 +1,14 @@
 //
-//  View.swift
-//  BOSEDU
+//  File.swift
+//  UIComponents
 //
-//  Created by Виталий Багаутдинов on 30.05.2025.
+//  Created by Виталий Багаутдинов on 31.05.2025.
 //
 
 import Foundation
 import SwiftUI
 
-extension View {
+public extension View {
     
     func robotoFont(size: CGFloat, font: RobotoFont = .regular) -> some View {
         
@@ -39,3 +39,16 @@ extension View {
     }
     
 }
+
+public enum RobotoFont: String {
+    
+    case black
+    case extrabold
+    case bold
+    case semiBold
+    case medium
+    case regular
+    case light
+    
+}
+
