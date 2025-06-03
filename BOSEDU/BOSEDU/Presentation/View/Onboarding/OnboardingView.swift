@@ -13,7 +13,6 @@ struct OnboardingView: View {
     @StateObject var ovm = OnboardingViewModel()
     
     var body: some View {
-        NavigationStack {
             GeometryReader { geometry in
                 ZStack {
                     Color.white.ignoresSafeArea()
@@ -51,7 +50,7 @@ struct OnboardingView: View {
                                 .padding(.top, geometry.size.height * 0.034)
                         }
                         
-                        ButtonOnboardingView(title: ovm.buttonTitle) {
+                        PrimaryButtonView(title: ovm.buttonTitle, style: .onboarding) {
                             withAnimation(.snappy) {
                                 ovm.nextScreen()
                             }
@@ -59,12 +58,11 @@ struct OnboardingView: View {
                         
                         
                         Spacer()
-                        
-                        
-                    }
                 }
             }
-        }
+            }.fullScreenCover(isPresented: $ovm.isNavigate) {
+                LoginView()
+            }
     }
 }
 #Preview {

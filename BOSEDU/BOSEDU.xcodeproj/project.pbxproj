@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		895939FF2DEB2F210016683A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895939FE2DEB2F210016683A /* LoginView.swift */; };
+		89593A032DEB38D90016683A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A022DEB38D90016683A /* LoginViewModel.swift */; };
+		89593A062DEB4FE10016683A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A052DEB4FE10016683A /* RegisterView.swift */; };
+		89593A092DEB50060016683A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A082DEB50060016683A /* RegisterViewModel.swift */; };
+		89593A0C2DEB54900016683A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A0B2DEB54900016683A /* ForgotPasswordView.swift */; };
+		89593A0F2DECC5930016683A /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A0E2DECC5930016683A /* ForgotPasswordViewModel.swift */; };
+		89593A122DECD82C0016683A /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A112DECD82C0016683A /* OTPView.swift */; };
 		899299AE2DE9DCB00054E7D4 /* QueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899299AD2DE9DCB00054E7D4 /* QueueModel.swift */; };
 		899299B12DE9E4EF0054E7D4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899299B02DE9E4EF0054E7D4 /* OnboardingViewModel.swift */; };
 		8995CC6D2DE9A9A6004C6604 /* BOSEDUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC6A2DE9A9A6004C6604 /* BOSEDUApp.swift */; };
@@ -29,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		895939FE2DEB2F210016683A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		89593A022DEB38D90016683A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		89593A052DEB4FE10016683A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		89593A082DEB50060016683A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		89593A0B2DEB54900016683A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		89593A0E2DECC5930016683A /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		89593A112DECD82C0016683A /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		899299AD2DE9DCB00054E7D4 /* QueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueModel.swift; sourceTree = "<group>"; };
 		899299B02DE9E4EF0054E7D4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		8995CC592DE9A619004C6604 /* BOSEDU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOSEDU.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +79,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		895939FD2DEB2EF30016683A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				895939FE2DEB2F210016683A /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		89593A012DEB38C40016683A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				89593A022DEB38D90016683A /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		89593A042DEB4FCD0016683A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				89593A052DEB4FE10016683A /* RegisterView.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		89593A072DEB4FF60016683A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				89593A082DEB50060016683A /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		89593A0A2DEB547C0016683A /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				89593A0B2DEB54900016683A /* ForgotPasswordView.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		89593A0D2DECC57F0016683A /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				89593A0E2DECC5930016683A /* ForgotPasswordViewModel.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		89593A102DECD81D0016683A /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				89593A112DECD82C0016683A /* OTPView.swift */,
+			);
+			path = OTP;
+			sourceTree = "<group>";
+		};
 		899299AB2DE9DC9E0054E7D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,12 +151,12 @@
 			path = Queue;
 			sourceTree = "<group>";
 		};
-		899299AF2DE9E4E00054E7D4 /* OnboardingViewModel */ = {
+		899299AF2DE9E4E00054E7D4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				899299B02DE9E4EF0054E7D4 /* OnboardingViewModel.swift */,
 			);
-			path = OnboardingViewModel;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		8995CC502DE9A618004C6604 = {
@@ -185,6 +255,10 @@
 		8995CC772DE9A9D8004C6604 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89593A102DECD81D0016683A /* OTP */,
+				89593A0A2DEB547C0016683A /* ForgotPassword */,
+				89593A042DEB4FCD0016683A /* Register */,
+				895939FD2DEB2EF30016683A /* Login */,
 				8995CC7D2DE9AF25004C6604 /* SplashScreen */,
 				8995CC792DE9A9F4004C6604 /* Onboarding */,
 			);
@@ -194,8 +268,11 @@
 		8995CC782DE9A9D8004C6604 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				899299AF2DE9E4E00054E7D4 /* OnboardingViewModel */,
-				8995CD0B2DE9C64D004C6604 /* SplashScreenViewModel */,
+				89593A0D2DECC57F0016683A /* ForgotPassword */,
+				89593A072DEB4FF60016683A /* Register */,
+				89593A012DEB38C40016683A /* Login */,
+				899299AF2DE9E4E00054E7D4 /* Onboarding */,
+				8995CD0B2DE9C64D004C6604 /* SplashScreen */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -237,12 +314,12 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
-		8995CD0B2DE9C64D004C6604 /* SplashScreenViewModel */ = {
+		8995CD0B2DE9C64D004C6604 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
 				8995CD0C2DE9C663004C6604 /* SplashScreenViewModel.swift */,
 			);
-			path = SplashScreenViewModel;
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 		8995CD102DE9C869004C6604 /* UseCase */ = {
@@ -358,14 +435,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8995CD122DE9C87F004C6604 /* SplashScreenUseCase.swift in Sources */,
+				89593A122DECD82C0016683A /* OTPView.swift in Sources */,
 				8995CD162DE9CA54004C6604 /* SplashScreenDI.swift in Sources */,
+				89593A062DEB4FE10016683A /* RegisterView.swift in Sources */,
 				8995CD0F2DE9C75F004C6604 /* Images.swift in Sources */,
 				8995CC6D2DE9A9A6004C6604 /* BOSEDUApp.swift in Sources */,
 				899299AE2DE9DCB00054E7D4 /* QueueModel.swift in Sources */,
 				8995CD1A2DE9CE1D004C6604 /* Constants.swift in Sources */,
 				899299B12DE9E4EF0054E7D4 /* OnboardingViewModel.swift in Sources */,
+				89593A0F2DECC5930016683A /* ForgotPasswordViewModel.swift in Sources */,
 				8995CC6E2DE9A9A6004C6604 /* OnboardingView.swift in Sources */,
+				89593A092DEB50060016683A /* RegisterViewModel.swift in Sources */,
+				89593A032DEB38D90016683A /* LoginViewModel.swift in Sources */,
+				895939FF2DEB2F210016683A /* LoginView.swift in Sources */,
 				8995CC7C2DE9AF20004C6604 /* SplashScreenView.swift in Sources */,
+				89593A0C2DEB54900016683A /* ForgotPasswordView.swift in Sources */,
 				8995CD0D2DE9C663004C6604 /* SplashScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
