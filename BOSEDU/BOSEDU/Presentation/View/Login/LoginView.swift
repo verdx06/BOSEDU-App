@@ -16,7 +16,7 @@ struct LoginView: View {
         NavigationStack {
             GeometryReader { geo in
                 VStack {
-                    CustomTextFieldView(titleKey: "Email", text: $lvm.email)
+                    CustomTextFieldView(titleKey: "Email", errorText: lvm.emailErrorText, text: $lvm.email)
                         .padding(.top, geo.size.height * 0.034)
                     CustomTextFieldView(titleKey: "Password", security: true ,text: $lvm.password)
                         .padding(.top, geo.size.height * 0.012)
@@ -29,8 +29,22 @@ struct LoginView: View {
                             .robotoFont(size: 12, font: .medium)
                     }.padding(.top, geo.size.height * 0.046)
                     
-                    PrimaryButtonView(title: "Login", style: .auth) {
-                        //
+                    PrimaryButtonView(title: "Login", style: .auth, loading: lvm.isLoading) {
+                        lvm.login()
+                    }.padding(.top, geo.size.height * 0.034)
+                    
+                    HStack(spacing: 0){
+                        Text("Register ")
+                            .robotoFont(size: 12)
+                            .foregroundStyle(Colors.neutral100)
+                        NavigationLink {
+                            RegisterView()
+                        } label: {
+                            Text("Here!")
+                                .robotoFont(size: 12, font: .semiBold)
+                                .foregroundStyle(Colors.primary80)
+                        }
+
                     }.padding(.top, geo.size.height * 0.034)
                     
                     VStack {

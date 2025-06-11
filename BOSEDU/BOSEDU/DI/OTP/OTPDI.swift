@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+final class OTPDI {
+    
+    static func make() -> OTPViewModel {
+        
+        let useCase = OTPUseCaseImpl()
+        return OTPViewModel(useCase: useCase)
+        
+    }
+    
+}

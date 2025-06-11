@@ -8,11 +8,11 @@
 import Foundation
 
 
-extension String {
+extension Int {
     
-    func timerFormat(seconds: Int) -> String {
-        let minute = seconds / 60
-        let seconds = seconds % 60
+    func timerFormat() -> String {
+        let minute = self / 60
+        let seconds = self % 60
         return String(format: "%02d:%02d", minute, seconds)
     }
     

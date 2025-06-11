@@ -20,12 +20,12 @@ struct SplashScreenView: View {
                 HStack(spacing: 0) {
                     Image(Images.logo)
                         .padding(.trailing, 4)
-                    Text(Constants.title)
-                        .robotoFont(size: Constants.title_size, font: .extrabold)
+                    Text(ConstantsOnboarding.title)
+                        .robotoFont(size: ConstantsOnboarding.title_size, font: .extrabold)
                         .foregroundStyle(Colors.neutral0)
                 }
-                Text(Constants.subtitle)
-                    .robotoFont(size: Constants.subtitle_size)
+                Text(ConstantsOnboarding.subtitle)
+                    .robotoFont(size: ConstantsOnboarding.subtitle_size)
                     .foregroundStyle(Colors.neutral0)
                     .tracking(6)
             }

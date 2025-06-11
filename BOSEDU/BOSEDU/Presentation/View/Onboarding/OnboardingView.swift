@@ -22,12 +22,12 @@ struct OnboardingView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: geometry.size.height * 0.05)
-                            Text(Constants.title)
-                                .robotoFont(size: Constants.title_size, font: .extrabold)
+                            Text(ConstantsOnboarding.title)
+                                .robotoFont(size: ConstantsOnboarding.title_size, font: .extrabold)
                                 .foregroundStyle(Colors.primary80)
                         }.padding(.top, geometry.size.height * 0.055)
-                        Text(Constants.subtitle)
-                            .robotoFont(size: Constants.subtitle_size)
+                        Text(ConstantsOnboarding.subtitle)
+                            .robotoFont(size: ConstantsOnboarding.subtitle_size)
                             .foregroundStyle(Colors.neutral100)
                             .tracking(6)
                             .padding(.bottom, geometry.size.height * 0.098)
@@ -60,6 +60,7 @@ struct OnboardingView: View {
                         Spacer()
                 }
             }
+                .padding(.horizontal, 20)
             }.fullScreenCover(isPresented: $ovm.isNavigate) {
                 LoginView()
             }

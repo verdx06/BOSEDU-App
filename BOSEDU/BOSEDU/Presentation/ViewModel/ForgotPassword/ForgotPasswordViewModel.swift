@@ -11,5 +11,18 @@ import Foundation
 final class ForgotPasswordViewModel: ObservableObject {
     
     @Published var email: String = ""
+    @Published var emailErrorText: String = ""
+    @Published var isNavigate: Bool = false
+    
+    func sendEmailCode() {
+        
+        if email.emailValidate() {
+            isNavigate = true
+        } else {
+            emailErrorText = "Неверный формат email"
+        }
+        
+        
+    }
     
 }

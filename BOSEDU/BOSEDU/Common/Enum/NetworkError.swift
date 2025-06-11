@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum NetworkError: Error {
+    case userNotExist // пользователя не существует
+    case dublicateEmail // пользователь с таким email существует
+    case serverError // ошибка связанная с сервером
+}

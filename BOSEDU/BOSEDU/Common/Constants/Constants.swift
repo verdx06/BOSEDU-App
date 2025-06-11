@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Constants {
+enum ConstantsOnboarding {
     
     static let title = "BOSEDU"
     static let title_size: CGFloat = 48

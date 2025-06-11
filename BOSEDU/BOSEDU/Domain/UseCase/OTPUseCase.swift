@@ -6,3 +6,23 @@
 //
 
 import Foundation
+
+protocol OTPUseCase {
+    func startTimerForResend() async throws
+    func timeString(timeRemaining: Int) -> String
+}
+
+
+final class OTPUseCaseImpl: OTPUseCase {
+    
+    func startTimerForResend() async throws {
+        //
+    }
+
+    func timeString(timeRemaining: Int) -> String {
+        return ""
+    }
+
+
+    
+}

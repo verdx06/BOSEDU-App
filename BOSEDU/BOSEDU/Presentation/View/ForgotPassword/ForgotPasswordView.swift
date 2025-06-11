@@ -31,13 +31,16 @@ public struct ForgotPasswordView: View {
                     .padding(.top, geo.size.height * 0.024)
                 
                 PrimaryButtonView(title: "Send", style: .auth) {
-                    //
+                    fvm.isNavigate = true
                 }
                 .padding(.top, geo.size.height * 0.034)
                 
                 Spacer()
                 
             }
+            .navigationDestination(isPresented: $fvm.isNavigate, destination: {
+                OTPView(email: fvm.email, ovm: OTPDI.make())
+            })
             .navigationBarBackButtonHidden()
             .headerAuth(title: "Forgot Password", dismiss: true)
             .padding(.horizontal, 20)
@@ -46,5 +49,7 @@ public struct ForgotPasswordView: View {
 }
 
 #Preview {
-    ForgotPasswordView()
+    NavigationStack {
+        ForgotPasswordView()
+    }
 }
