@@ -29,7 +29,7 @@ public struct TextFieldModifier: ViewModifier {
             .focused($isFocused)
             .overlay {
                 RoundedRectangle(cornerRadius: style == .defaultStyle ? 50 : 10)
-                    .stroke(lineWidth: 0.5)
+                    .stroke(lineWidth: isFocused ? 1 : 0.5)
                     .foregroundStyle(isFocused ? Colors.primary70 : Colors.neutral70)
             }
     }
