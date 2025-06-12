@@ -10,7 +10,7 @@ import SwiftUI
 
 final class SplashScreenViewModel: ObservableObject {
     
-    @Published var isLoading: Bool = true
+    @Published var isOnboarding: Bool = false
     
     let useCase: SplashScreenUseCase
     
@@ -24,7 +24,7 @@ final class SplashScreenViewModel: ObservableObject {
             do {
                 try await useCase.startSplashTimer()
                 withAnimation(.interpolatingSpring) {
-                    isLoading = false
+                    isOnboarding = true
                 }
             } catch {
                 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89007A422DF9FA7B0036ABF7 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89007A412DF9FA7B0036ABF7 /* UIComponents.framework */; };
+		89007A432DF9FA7B0036ABF7 /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89007A412DF9FA7B0036ABF7 /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		89007A4B2DFAA6CF0036ABF7 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A4A2DFAA6CF0036ABF7 /* LoginUseCase.swift */; };
+		89007A4E2DFAA8E10036ABF7 /* LoginDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A4D2DFAA8E10036ABF7 /* LoginDI.swift */; };
 		895939FF2DEB2F210016683A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895939FE2DEB2F210016683A /* LoginView.swift */; };
 		89593A032DEB38D90016683A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A022DEB38D90016683A /* LoginViewModel.swift */; };
 		89593A062DEB4FE10016683A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A052DEB4FE10016683A /* RegisterView.swift */; };
@@ -24,7 +28,6 @@
 		8995CC6E2DE9A9A6004C6604 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC6B2DE9A9A6004C6604 /* OnboardingView.swift */; };
 		8995CC6F2DE9A9A6004C6604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8995CC682DE9A9A6004C6604 /* Assets.xcassets */; };
 		8995CC7C2DE9AF20004C6604 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CC7B2DE9AF20004C6604 /* SplashScreenView.swift */; };
-		8995CC802DE9B196004C6604 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8995CC7F2DE9B196004C6604 /* UIComponents */; };
 		8995CD032DE9B425004C6604 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8995CCFC2DE9B425004C6604 /* Roboto-Black.ttf */; };
 		8995CD042DE9B425004C6604 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8995CCFD2DE9B425004C6604 /* Roboto-Bold.ttf */; };
 		8995CD052DE9B425004C6604 /* Roboto-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8995CD022DE9B425004C6604 /* Roboto-SemiBold.ttf */; };
@@ -41,7 +44,24 @@
 		89D561852DF9CE9400B4FF79 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D561842DF9CE9400B4FF79 /* String.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		890DF9752DF9FA5C00B9975A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				89007A432DF9FA7B0036ABF7 /* UIComponents.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		89007A412DF9FA7B0036ABF7 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89007A4A2DFAA6CF0036ABF7 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		89007A4D2DFAA8E10036ABF7 /* LoginDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDI.swift; sourceTree = "<group>"; };
 		895939FE2DEB2F210016683A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		89593A022DEB38D90016683A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		89593A052DEB4FE10016683A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -60,7 +80,6 @@
 		8995CC692DE9A9A6004C6604 /* BOSEDU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BOSEDU.entitlements; sourceTree = "<group>"; };
 		8995CC6A2DE9A9A6004C6604 /* BOSEDUApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOSEDUApp.swift; sourceTree = "<group>"; };
 		8995CC6B2DE9A9A6004C6604 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		8995CC7A2DE9AE9D004C6604 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIComponents; sourceTree = "<group>"; };
 		8995CC7B2DE9AF20004C6604 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8995CCFC2DE9B425004C6604 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		8995CCFD2DE9B425004C6604 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -84,13 +103,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8995CC802DE9B196004C6604 /* UIComponents in Frameworks */,
+				89007A422DF9FA7B0036ABF7 /* UIComponents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89007A4C2DFAA8CF0036ABF7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				89007A4D2DFAA8E10036ABF7 /* LoginDI.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		895939FD2DEB2EF30016683A /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +217,6 @@
 		8995CC502DE9A618004C6604 = {
 			isa = PBXGroup;
 			children = (
-				8995CC7A2DE9AE9D004C6604 /* UIComponents */,
 				8995CC6C2DE9A9A6004C6604 /* BOSEDU */,
 				8995CC7E2DE9B196004C6604 /* Frameworks */,
 				8995CC5A2DE9A619004C6604 /* Products */,
@@ -210,7 +236,7 @@
 			children = (
 				8995CD132DE9CA38004C6604 /* DI */,
 				8995CD0A2DE9B466004C6604 /* Info.plist */,
-				8995CC702DE9A9A9004C6604 /* Data */,
+				89D5630E2DF9EAD200B4FF79 /* Data */,
 				8995CC712DE9A9AA004C6604 /* Domain */,
 				8995CC722DE9A9AA004C6604 /* Presentation */,
 				8995CC732DE9A9BA004C6604 /* Common */,
@@ -218,13 +244,6 @@
 				8995CC692DE9A9A6004C6604 /* BOSEDU.entitlements */,
 			);
 			path = BOSEDU;
-			sourceTree = "<group>";
-		};
-		8995CC702DE9A9A9004C6604 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		8995CC712DE9A9AA004C6604 /* Domain */ = {
@@ -328,6 +347,7 @@
 		8995CC7E2DE9B196004C6604 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89007A412DF9FA7B0036ABF7 /* UIComponents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -359,6 +379,7 @@
 			children = (
 				8995CD112DE9C87F004C6604 /* SplashScreenUseCase.swift */,
 				8974B3022DF0132E00830567 /* OTPUseCase.swift */,
+				89007A4A2DFAA6CF0036ABF7 /* LoginUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -366,6 +387,7 @@
 		8995CD132DE9CA38004C6604 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				89007A4C2DFAA8CF0036ABF7 /* Login */,
 				8974B3082DF013AB00830567 /* OTP */,
 				8995CD142DE9CA41004C6604 /* SplashScreen */,
 			);
@@ -388,6 +410,13 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		89D5630E2DF9EAD200B4FF79 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -398,6 +427,7 @@
 				8995CC552DE9A619004C6604 /* Sources */,
 				8995CC562DE9A619004C6604 /* Frameworks */,
 				8995CC572DE9A619004C6604 /* Resources */,
+				890DF9752DF9FA5C00B9975A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,7 +435,6 @@
 			);
 			name = BOSEDU;
 			packageProductDependencies = (
-				8995CC7F2DE9B196004C6604 /* UIComponents */,
 			);
 			productName = BOSEDU;
 			productReference = 8995CC592DE9A619004C6604 /* BOSEDU.app */;
@@ -471,6 +500,7 @@
 				8995CD122DE9C87F004C6604 /* SplashScreenUseCase.swift in Sources */,
 				89593A122DECD82C0016683A /* OTPView.swift in Sources */,
 				89D561852DF9CE9400B4FF79 /* String.swift in Sources */,
+				89007A4E2DFAA8E10036ABF7 /* LoginDI.swift in Sources */,
 				8995CD162DE9CA54004C6604 /* SplashScreenDI.swift in Sources */,
 				89593A062DEB4FE10016683A /* RegisterView.swift in Sources */,
 				8995CD0F2DE9C75F004C6604 /* Images.swift in Sources */,
@@ -491,6 +521,7 @@
 				8995CC7C2DE9AF20004C6604 /* SplashScreenView.swift in Sources */,
 				89593A0C2DEB54900016683A /* ForgotPasswordView.swift in Sources */,
 				8995CD0D2DE9C663004C6604 /* SplashScreenViewModel.swift in Sources */,
+				89007A4B2DFAA6CF0036ABF7 /* LoginUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,13 +748,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		8995CC7F2DE9B196004C6604 /* UIComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = UIComponents;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8995CC512DE9A618004C6604 /* Project object */;
 }

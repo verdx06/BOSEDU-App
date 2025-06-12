@@ -33,20 +33,20 @@ struct RegisterView: View {
                         HStack(spacing: 0){
                             Text("By registering, you agree to the")
                                 .robotoFont(size: 10)
-                                .foregroundStyle(Colors.neutral40)
+                                .foregroundStyle(Color.neutral40)
                             Text(" Terms of Service,")
-                                .foregroundStyle(Colors.neutral50)
+                                .foregroundStyle(Color.neutral50)
                                 .robotoFont(size: 10, font: .semiBold)
                         }
                         HStack(spacing: 0) {
                             Text("Privacy Policy")
-                                .foregroundStyle(Colors.neutral50)
+                                .foregroundStyle(Color.neutral50)
                                 .robotoFont(size: 10, font: .semiBold)
                             Text(" and")
-                                .foregroundStyle(Colors.neutral40)
+                                .foregroundStyle(Color.neutral40)
                                 .robotoFont(size: 10)
                             Text(" Cookie Policy.")
-                                .foregroundStyle(Colors.neutral50)
+                                .foregroundStyle(Color.neutral50)
                                 .robotoFont(size: 10, font: .semiBold)
                         }
                     }.padding(.top, geo.size.height * 0.034)

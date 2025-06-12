@@ -10,7 +10,7 @@ import UIComponents
 
 struct LoginView: View {
     
-    @StateObject var lvm = LoginViewModel()
+    @StateObject var lvm: LoginViewModel
     
     var body: some View {
         NavigationStack {
@@ -18,14 +18,14 @@ struct LoginView: View {
                 VStack {
                     CustomTextFieldView(titleKey: "Email", errorText: lvm.emailErrorText, text: $lvm.email)
                         .padding(.top, geo.size.height * 0.034)
-                    CustomTextFieldView(titleKey: "Password", security: true ,text: $lvm.password)
+                    CustomTextFieldView(titleKey: "Password", security: true, errorText: lvm.passwordErrorText, text: $lvm.password)
                         .padding(.top, geo.size.height * 0.012)
                     
                     NavigationLink {
                         ForgotPasswordView()
                     } label: {
                         Text("Forgot Password")
-                            .foregroundStyle(Colors.primary70)
+                            .foregroundStyle(Color.primary70)
                             .robotoFont(size: 12, font: .medium)
                     }.padding(.top, geo.size.height * 0.046)
                     
@@ -36,13 +36,13 @@ struct LoginView: View {
                     HStack(spacing: 0){
                         Text("Register ")
                             .robotoFont(size: 12)
-                            .foregroundStyle(Colors.neutral100)
+                            .foregroundStyle(Color.neutral100)
                         NavigationLink {
                             RegisterView()
                         } label: {
                             Text("Here!")
                                 .robotoFont(size: 12, font: .semiBold)
-                                .foregroundStyle(Colors.primary80)
+                                .foregroundStyle(Color.primary80)
                         }
 
                     }.padding(.top, geo.size.height * 0.034)
@@ -51,20 +51,20 @@ struct LoginView: View {
                         HStack(spacing: 0){
                             Text("By registering, you agree to the")
                                 .robotoFont(size: 10)
-                                .foregroundStyle(Colors.neutral40)
+                                .foregroundStyle(Color.neutral40)
                             Text(" Terms of Service,")
-                                .foregroundStyle(Colors.neutral50)
+                                .foregroundStyle(Color.neutral50)
                                 .robotoFont(size: 10, font: .semiBold)
                         }
                         HStack(spacing: 0) {
                             Text("Privacy Policy")
-                                .foregroundStyle(Colors.neutral50)
+                                .foregroundStyle(Color.neutral50)
                                 .robotoFont(size: 10, font: .semiBold)
                             Text(" and")
-                                .foregroundStyle(Colors.neutral40)
+                                .foregroundStyle(Color.neutral40)
                                 .robotoFont(size: 10)
                             Text(" Cookie Policy.")
-                                .foregroundStyle(Colors.neutral50)
+                                .foregroundStyle(Color.neutral50)
                                 .robotoFont(size: 10, font: .semiBold)
                         }
                     }.padding(.top, geo.size.height * 0.034)
@@ -79,5 +79,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(lvm: LoginDI.make())
 }

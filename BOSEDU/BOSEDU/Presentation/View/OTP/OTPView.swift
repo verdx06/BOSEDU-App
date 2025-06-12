@@ -21,16 +21,16 @@ struct OTPView: View {
                 
                 Text("The verification code has been sent.\nCheck the code on your email")
                         .robotoFont(size: 14)
-                        .foregroundStyle(Colors.neutral100)
+                        .foregroundStyle(Color.neutral100)
                         .multilineTextAlignment(.center)
                         .padding(.top, geo.size.height * 0.022)
                 HStack(spacing: 0){
                     Text("sent to ")
                         .robotoFont(size: 14)
-                        .foregroundStyle(Colors.neutral100)
+                        .foregroundStyle(Color.neutral100)
                     Text(email)
                         .robotoFont(size: 14, font: .semiBold)
-                        .foregroundStyle(Colors.neutral100)
+                        .foregroundStyle(Color.neutral100)
                 }
                 
                 HStack {
@@ -50,11 +50,11 @@ struct OTPView: View {
                     Text("You can resend code in")
                         .padding(.top, geo.size.height * 0.012)
                 }.robotoFont(size: 12)
-                    .foregroundStyle(Colors.neutral100)
+                    .foregroundStyle(Color.neutral100)
                 Text(ovm.seconds.timerFormat())
                     .padding(.top, geo.size.height * 0.012)
                     .robotoFont(size: 14, font: .semiBold)
-                    .foregroundStyle(Colors.primary70)
+                    .foregroundStyle(Color.primary70)
                 
                 PrimaryButtonView(title: "Verification", style: .auth) {
                     //

@@ -14,7 +14,7 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack {
-            Color(Colors.primary80)
+            Color(Color.primary80)
                 .ignoresSafeArea()
             VStack {
                 HStack(spacing: 0) {
@@ -22,19 +22,18 @@ struct SplashScreenView: View {
                         .padding(.trailing, 4)
                     Text(ConstantsOnboarding.title)
                         .robotoFont(size: ConstantsOnboarding.title_size, font: .extrabold)
-                        .foregroundStyle(Colors.neutral0)
+                        .foregroundStyle(Color.neutral0)
                 }
                 Text(ConstantsOnboarding.subtitle)
                     .robotoFont(size: ConstantsOnboarding.subtitle_size)
-                    .foregroundStyle(Colors.neutral0)
+                    .foregroundStyle(Color.neutral0)
                     .tracking(6)
             }
-            
-            if !svm.isLoading {
-                OnboardingView()
-                
-            }
-        }.onAppear {
+        }
+        .fullScreenCover(isPresented: $svm.isOnboarding, content: {
+            OnboardingView()
+        })
+        .onAppear {
             svm.startLoading()
         }
     }

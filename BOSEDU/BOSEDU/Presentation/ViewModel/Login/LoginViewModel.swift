@@ -18,13 +18,21 @@ final class LoginViewModel: ObservableObject {
     @Published var isNavigate: Bool = false
     @Published var isLoading: Bool = false
     
+    let useCase: LoginUseCase
+    
+    init(useCase: LoginUseCase) {
+        self.useCase = useCase
+    }
+    
     private func authorizate() {
         print("Реализация входа")
     }
     
     func login () {
-        emailErrorText = email.emailValidate() ? "" : "Неверный формат email"
-        if emailErrorText.isEmpty {
+        let result = useCase.checkCorrectData(email: email, password: password)
+        emailErrorText = result.emailError
+        passwordErrorText = result.passwordError
+        if emailErrorText.isEmpty && passwordErrorText.isEmpty {
             authorizate()
         }
     }

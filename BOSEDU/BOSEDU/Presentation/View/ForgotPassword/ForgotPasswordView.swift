@@ -17,13 +17,13 @@ public struct ForgotPasswordView: View {
             VStack(alignment: .leading, spacing: 0) {
                 Text("Forgot your password?")
                     .robotoFont(size: 16, font: .semiBold)
-                    .foregroundStyle(Colors.neutral100)
+                    .foregroundStyle(Color.neutral100)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, geo.size.height * 0.022)
                 
                 Text("Enter the registered email to receive help to reset your\npassword.")
                     .robotoFont(size: 12)
-                    .foregroundStyle(Colors.neutral70)
+                    .foregroundStyle(Color.neutral70)
                     .padding(.top, geo.size.height * 0.012)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
