@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  BOSEDU
+//  UIComponents
 //
-//  Created by Виталий Багаутдинов on 30.05.2025.
+//  Created by Виталий Багаутдинов on 11.06.2025.
 //
 
 import SwiftUI
