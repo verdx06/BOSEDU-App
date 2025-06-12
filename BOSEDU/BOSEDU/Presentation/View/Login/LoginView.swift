@@ -38,7 +38,7 @@ struct LoginView: View {
                             .robotoFont(size: 12)
                             .foregroundStyle(Color.neutral100)
                         NavigationLink {
-                            RegisterView()
+                            RegisterView(rvm: RegisterDI.make())
                         } label: {
                             Text("Here!")
                                 .robotoFont(size: 12, font: .semiBold)

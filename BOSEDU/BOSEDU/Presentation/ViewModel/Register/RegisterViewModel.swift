@@ -14,4 +14,28 @@ final class RegisterViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var passwordConfirm: String = ""
     
+    @Published var emailError: String = ""
+    @Published var nameError: String = ""
+    @Published var passwordError: String = ""
+    @Published var passwordConfirmError: String = ""
+    
+    let useCase: RegisterUseCase
+    
+    init(useCase: RegisterUseCase) {
+        self.useCase = useCase
+    }
+    
+    func register() {
+        let result = useCase.checkCorrectData(
+            email: email,
+            password: password,
+            passwordConfirm: passwordConfirm,
+            name: name
+        )
+        emailError = result.emailError
+        passwordError = result.passwordError
+        passwordConfirmError = result.passwordConfirmError
+        nameError = result.nameError
+    }
+    
 }

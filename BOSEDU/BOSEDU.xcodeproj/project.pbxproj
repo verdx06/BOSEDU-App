@@ -11,6 +11,9 @@
 		89007A432DF9FA7B0036ABF7 /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89007A412DF9FA7B0036ABF7 /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89007A4B2DFAA6CF0036ABF7 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A4A2DFAA6CF0036ABF7 /* LoginUseCase.swift */; };
 		89007A4E2DFAA8E10036ABF7 /* LoginDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A4D2DFAA8E10036ABF7 /* LoginDI.swift */; };
+		89007A6C2DFAAF430036ABF7 /* RegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A6B2DFAAF430036ABF7 /* RegisterUseCase.swift */; };
+		89007A6F2DFAAFAD0036ABF7 /* RegisterDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A6D2DFAAFAD0036ABF7 /* RegisterDI.swift */; };
+		89007A712DFAB2570036ABF7 /* ValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A702DFAB2570036ABF7 /* ValidationUseCase.swift */; };
 		895939FF2DEB2F210016683A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895939FE2DEB2F210016683A /* LoginView.swift */; };
 		89593A032DEB38D90016683A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A022DEB38D90016683A /* LoginViewModel.swift */; };
 		89593A062DEB4FE10016683A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A052DEB4FE10016683A /* RegisterView.swift */; };
@@ -62,6 +65,9 @@
 		89007A412DF9FA7B0036ABF7 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89007A4A2DFAA6CF0036ABF7 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		89007A4D2DFAA8E10036ABF7 /* LoginDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDI.swift; sourceTree = "<group>"; };
+		89007A6B2DFAAF430036ABF7 /* RegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUseCase.swift; sourceTree = "<group>"; };
+		89007A6D2DFAAFAD0036ABF7 /* RegisterDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDI.swift; sourceTree = "<group>"; };
+		89007A702DFAB2570036ABF7 /* ValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUseCase.swift; sourceTree = "<group>"; };
 		895939FE2DEB2F210016683A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		89593A022DEB38D90016683A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		89593A052DEB4FE10016683A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -116,6 +122,14 @@
 				89007A4D2DFAA8E10036ABF7 /* LoginDI.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		89007A6E2DFAAFAD0036ABF7 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				89007A6D2DFAAFAD0036ABF7 /* RegisterDI.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		895939FD2DEB2EF30016683A /* Login */ = {
@@ -380,6 +394,8 @@
 				8995CD112DE9C87F004C6604 /* SplashScreenUseCase.swift */,
 				8974B3022DF0132E00830567 /* OTPUseCase.swift */,
 				89007A4A2DFAA6CF0036ABF7 /* LoginUseCase.swift */,
+				89007A6B2DFAAF430036ABF7 /* RegisterUseCase.swift */,
+				89007A702DFAB2570036ABF7 /* ValidationUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -388,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				89007A4C2DFAA8CF0036ABF7 /* Login */,
+				89007A6E2DFAAFAD0036ABF7 /* Register */,
 				8974B3082DF013AB00830567 /* OTP */,
 				8995CD142DE9CA41004C6604 /* SplashScreen */,
 			);
@@ -502,10 +519,12 @@
 				89D561852DF9CE9400B4FF79 /* String.swift in Sources */,
 				89007A4E2DFAA8E10036ABF7 /* LoginDI.swift in Sources */,
 				8995CD162DE9CA54004C6604 /* SplashScreenDI.swift in Sources */,
+				89007A6F2DFAAFAD0036ABF7 /* RegisterDI.swift in Sources */,
 				89593A062DEB4FE10016683A /* RegisterView.swift in Sources */,
 				8995CD0F2DE9C75F004C6604 /* Images.swift in Sources */,
 				8995CC6D2DE9A9A6004C6604 /* BOSEDUApp.swift in Sources */,
 				8974B30A2DF013BA00830567 /* OTPDI.swift in Sources */,
+				89007A712DFAB2570036ABF7 /* ValidationUseCase.swift in Sources */,
 				899299AE2DE9DCB00054E7D4 /* QueueModel.swift in Sources */,
 				8974B3032DF0132E00830567 /* OTPUseCase.swift in Sources */,
 				8995CD1A2DE9CE1D004C6604 /* Constants.swift in Sources */,
@@ -518,6 +537,7 @@
 				8974B30C2DF2078B00830567 /* NetworkError.swift in Sources */,
 				89593A032DEB38D90016683A /* LoginViewModel.swift in Sources */,
 				895939FF2DEB2F210016683A /* LoginView.swift in Sources */,
+				89007A6C2DFAAF430036ABF7 /* RegisterUseCase.swift in Sources */,
 				8995CC7C2DE9AF20004C6604 /* SplashScreenView.swift in Sources */,
 				89593A0C2DEB54900016683A /* ForgotPasswordView.swift in Sources */,
 				8995CD0D2DE9C663004C6604 /* SplashScreenViewModel.swift in Sources */,

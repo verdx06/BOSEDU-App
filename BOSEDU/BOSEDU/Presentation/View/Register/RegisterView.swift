@@ -10,23 +10,23 @@ import UIComponents
 
 struct RegisterView: View {
     
-    @StateObject var rvm = RegisterViewModel()
+    @StateObject var rvm: RegisterViewModel
     
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
                 VStack {
-                    CustomTextFieldView(titleKey: "Name", text: $rvm.name)
+                    CustomTextFieldView(titleKey: "Name", errorText: rvm.nameError, text: $rvm.name)
                         .padding(.top, geo.size.height * 0.034)
-                    CustomTextFieldView(titleKey: "Email", text: $rvm.email)
+                    CustomTextFieldView(titleKey: "Email", errorText: rvm.emailError, text: $rvm.email)
                         .padding(.top, geo.size.height * 0.012)
-                    CustomTextFieldView(titleKey: "Password", security: true ,text: $rvm.password)
+                    CustomTextFieldView(titleKey: "Password", security: true, errorText: rvm.passwordError, text: $rvm.password)
                         .padding(.top, geo.size.height * 0.012)
-                    CustomTextFieldView(titleKey: "Re-enter Password", security: true ,text: $rvm.password)
+                    CustomTextFieldView(titleKey: "Re-enter Password", security: true, errorText: rvm.passwordConfirmError, text: $rvm.passwordConfirm)
                         .padding(.top, geo.size.height * 0.012)
                     
                     PrimaryButtonView(title: "Register Now", style: .auth) {
-                        //
+                        rvm.register()
                     }.padding(.top, geo.size.height * 0.034)
                     
                     VStack {
@@ -61,5 +61,5 @@ struct RegisterView: View {
 }
 
 #Preview {
-    RegisterView()
+    RegisterView(rvm: RegisterDI.make())
 }
