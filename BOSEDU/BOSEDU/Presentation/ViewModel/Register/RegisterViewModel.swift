@@ -16,7 +16,7 @@ final class RegisterViewModel: ObservableObject {
     
     @Published var emailError: String = ""
     @Published var nameError: String = ""
-    @Published var passwordError: String = ""
+    @Published var passwordError: String = "" 
     @Published var passwordConfirmError: String = ""
     
     let useCase: RegisterUseCase

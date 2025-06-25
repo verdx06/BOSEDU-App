@@ -14,14 +14,18 @@ final class ForgotPasswordViewModel: ObservableObject {
     @Published var emailErrorText: String = ""
     @Published var isNavigate: Bool = false
     
+    let useCase: ValidationUseCase
+    
+    init(useCase: ValidationUseCase = BaseValidationUseCase()) {
+        self.useCase = useCase
+    }
+    
     func sendEmailCode() {
         
-        if email.emailValidate() {
+        emailErrorText = useCase.validateEmail(email)
+        if emailErrorText.isEmpty {
             isNavigate = true
-        } else {
-            emailErrorText = "Неверный формат email"
         }
-        
         
     }
     

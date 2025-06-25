@@ -13,10 +13,19 @@ final class OTPViewModel: ObservableObject {
     @Published var code: [String] = Array(repeating: "", count: 4)
     @Published var isFocuse: Int?
     @Published var seconds = 120
+    @Published var notSuccess: Bool = false
     var timer: Timer?
     
     init(useCase: OTPUseCase) {
         self.useCase = useCase
+    }
+    
+    func sendCode() {
+        if code.joined() == "1111" {
+            notSuccess = false
+        } else {
+            notSuccess = true
+        }
     }
     
     func handleOTPChange(index: Int, newValue: String) {

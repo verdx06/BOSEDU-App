@@ -35,7 +35,7 @@ struct OTPView: View {
                 
                 HStack {
                     ForEach(0..<4, id: \.self) { index in
-                        CustomTextFieldView(titleKey: "", style: .OTP, text: $ovm.code[index])
+                        CustomTextFieldView(titleKey: "", style: .OTP, showError: ovm.notSuccess, text: $ovm.code[index])
                             .focused($isFocuse, equals: index)
                             .onChange(of: ovm.code[index]) { newValue in
                                 ovm.handleOTPChange(index: index, newValue: newValue)
@@ -57,7 +57,7 @@ struct OTPView: View {
                     .foregroundStyle(Color.primary70)
                 
                 PrimaryButtonView(title: "Verification", style: .auth) {
-                    //
+                    ovm.sendCode()
                 }.padding(.top, geo.size.height * 0.046)
                 
                 Spacer()

@@ -13,25 +13,39 @@ public struct CustomTextFieldView: View {
     let style: StyleTextField
     let security: Bool
     let errorText: String
+    let showError: Bool
     @Binding var text: String
     
-    public init(titleKey: String, style: StyleTextField = .defaultStyle, security: Bool = false, errorText: String = "", text: Binding<String>) {
+    private var hasError: Bool {
+        if !errorText.isEmpty {
+            return true
+        }
+        if showError {
+            return true
+        }
+        return false
+    }
+    
+    public init(titleKey: String, style: StyleTextField = .defaultStyle, security: Bool = false, showError: Bool = false, errorText: String = "", text: Binding<String>) {
         self.titleKey = titleKey
         self.style = style
         self.security = security
         self.errorText = errorText
+        self.showError = showError
         self._text = text
     }
+    
+    
     
     public var body: some View {
         VStack (alignment: .leading){
             ZStack(alignment: .leading) {
                 if security {
                     SecureField("", text: $text)
-                        .modifier(TextFieldModifier(error: !errorText.isEmpty))
+                        .modifier(TextFieldModifier(error: hasError))
                 } else {
                     TextField("", text: $text)
-                        .modifier(TextFieldModifier(style: style, error: !errorText.isEmpty))
+                        .modifier(TextFieldModifier(style: style, error: hasError))
                     
                 }
                 
@@ -43,7 +57,7 @@ public struct CustomTextFieldView: View {
                 }
                 
             }
-            if !errorText.isEmpty {
+            if !errorText.isEmpty && style != .OTP {
                 Text(errorText)
                     .robotoFont(size: 12, font: .semiBold)
                     .foregroundStyle(Color.accent50)

@@ -27,11 +27,11 @@ public struct ForgotPasswordView: View {
                     .padding(.top, geo.size.height * 0.012)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                CustomTextFieldView(titleKey: "Email", text: $fvm.email)
+                CustomTextFieldView(titleKey: "Email", errorText: fvm.emailErrorText, text: $fvm.email)
                     .padding(.top, geo.size.height * 0.024)
                 
                 PrimaryButtonView(title: "Send", style: .auth) {
-                    fvm.isNavigate = true
+                    fvm.sendEmailCode()
                 }
                 .padding(.top, geo.size.height * 0.034)
                 
