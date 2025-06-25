@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import NetworkService
 
 @MainActor
 final class LoginDI {
     
     static func make() -> LoginViewModel {
         
-        let useCase = LoginUseCaseImpl()
+        let networkRequest: NetworkRequests = NetworkRequestsImpl()
+        let reposiroty: AuthRepository = AuthRepositoryImpl(networkRequest: networkRequest)
+        let useCase: LoginUseCase = LoginUseCaseImpl(repository: reposiroty)
         return LoginViewModel(useCase: useCase)
         
     }

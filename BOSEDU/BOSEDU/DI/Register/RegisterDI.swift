@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import NetworkService
 
 final class RegisterDI {
     
     static func make() -> RegisterViewModel {
         
-        let useCase = RegisterUseCaseImpl()
+        let networkRequest: NetworkRequests = NetworkRequestsImpl()
+        let repository: AuthRepository = AuthRepositoryImpl(networkRequest: networkRequest)
+        let useCase = RegisterUseCaseImpl(repository: repository)
         return RegisterViewModel(useCase: useCase)
         
     }

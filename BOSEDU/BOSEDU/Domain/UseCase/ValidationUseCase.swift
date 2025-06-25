@@ -10,6 +10,8 @@ import Foundation
 protocol ValidationUseCase {
     func validateEmail(_ email: String) -> String
     func validatePassword(_ password: String) -> String
+    func validatePasswordConfirmation(password: String, passwordConfirm: String) -> String
+    func validateName(_ name: String) -> String
 }
 
 class BaseValidationUseCase: ValidationUseCase {
@@ -32,4 +34,19 @@ class BaseValidationUseCase: ValidationUseCase {
         }
         return ""
     }
-} 
+    
+    func validatePasswordConfirmation(password: String, passwordConfirm: String) -> String {
+        guard password == passwordConfirm else {
+            return "Пароли не совпадают"
+        }
+        return ""
+    }
+    
+    func validateName(_ name: String) -> String {
+        guard !name.isEmpty else {
+            return "Имя не может быть пустым"
+        }
+        return ""
+    }
+    
+}

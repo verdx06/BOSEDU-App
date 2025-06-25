@@ -43,6 +43,11 @@
 		8995CD122DE9C87F004C6604 /* SplashScreenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD112DE9C87F004C6604 /* SplashScreenUseCase.swift */; };
 		8995CD162DE9CA54004C6604 /* SplashScreenDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD152DE9CA54004C6604 /* SplashScreenDI.swift */; };
 		8995CD1A2DE9CE1D004C6604 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD192DE9CE1D004C6604 /* Constants.swift */; };
+		89C449042E08A65200151C6B /* NetworkService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C449032E08A65200151C6B /* NetworkService.framework */; };
+		89C449052E08A65200151C6B /* NetworkService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89C449032E08A65200151C6B /* NetworkService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		89C449072E08A6D600151C6B /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C449062E08A6D600151C6B /* AuthRepository.swift */; };
+		89C449782E0921AA00151C6B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C449772E0921AA00151C6B /* HapticsManager.swift */; };
+		89C4497B2E0923F000151C6B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C4497A2E0923F000151C6B /* Launch Screen.storyboard */; };
 		89D561832DF9C71000B4FF79 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D561822DF9C71000B4FF79 /* Int.swift */; };
 		89D561852DF9CE9400B4FF79 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D561842DF9CE9400B4FF79 /* String.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +60,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				89007A432DF9FA7B0036ABF7 /* UIComponents.framework in Embed Frameworks */,
+				89C449052E08A65200151C6B /* NetworkService.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +106,10 @@
 		8995CD112DE9C87F004C6604 /* SplashScreenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenUseCase.swift; sourceTree = "<group>"; };
 		8995CD152DE9CA54004C6604 /* SplashScreenDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenDI.swift; sourceTree = "<group>"; };
 		8995CD192DE9CE1D004C6604 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89C449032E08A65200151C6B /* NetworkService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C449062E08A6D600151C6B /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		89C449772E0921AA00151C6B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		89C4497A2E0923F000151C6B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		89D561822DF9C71000B4FF79 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		89D561842DF9CE9400B4FF79 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89007A422DF9FA7B0036ABF7 /* UIComponents.framework in Frameworks */,
+				89C449042E08A65200151C6B /* NetworkService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +274,7 @@
 		8995CC712DE9A9AA004C6604 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				89C449762E09218E00151C6B /* Interfaces */,
 				899299AB2DE9DC9E0054E7D4 /* Models */,
 				8995CD102DE9C869004C6604 /* UseCase */,
 			);
@@ -319,6 +331,7 @@
 		8995CC772DE9A9D8004C6604 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89C449792E0923D800151C6B /* LaunchScreen */,
 				89593A102DECD81D0016683A /* OTP */,
 				89593A0A2DEB547C0016683A /* ForgotPassword */,
 				89593A042DEB4FCD0016683A /* Register */,
@@ -361,6 +374,7 @@
 		8995CC7E2DE9B196004C6604 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89C449032E08A65200151C6B /* NetworkService.framework */,
 				89007A412DF9FA7B0036ABF7 /* UIComponents.framework */,
 			);
 			name = Frameworks;
@@ -427,9 +441,26 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		89C449762E09218E00151C6B /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				89C449772E0921AA00151C6B /* HapticsManager.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		89C449792E0923D800151C6B /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				89C4497A2E0923F000151C6B /* Launch Screen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		89D5630E2DF9EAD200B4FF79 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				89C449062E08A6D600151C6B /* AuthRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -499,6 +530,7 @@
 				8995CD032DE9B425004C6604 /* Roboto-Black.ttf in Resources */,
 				8995CD042DE9B425004C6604 /* Roboto-Bold.ttf in Resources */,
 				8995CD052DE9B425004C6604 /* Roboto-SemiBold.ttf in Resources */,
+				89C4497B2E0923F000151C6B /* Launch Screen.storyboard in Resources */,
 				8995CD062DE9B425004C6604 /* Roboto-ExtraBold.ttf in Resources */,
 				8995CD072DE9B425004C6604 /* Roboto-Light.ttf in Resources */,
 				8995CD082DE9B425004C6604 /* Roboto-Medium.ttf in Resources */,
@@ -522,9 +554,11 @@
 				89007A6F2DFAAFAD0036ABF7 /* RegisterDI.swift in Sources */,
 				89593A062DEB4FE10016683A /* RegisterView.swift in Sources */,
 				8995CD0F2DE9C75F004C6604 /* Images.swift in Sources */,
+				89C449072E08A6D600151C6B /* AuthRepository.swift in Sources */,
 				8995CC6D2DE9A9A6004C6604 /* BOSEDUApp.swift in Sources */,
 				8974B30A2DF013BA00830567 /* OTPDI.swift in Sources */,
 				89007A712DFAB2570036ABF7 /* ValidationUseCase.swift in Sources */,
+				89C449782E0921AA00151C6B /* HapticsManager.swift in Sources */,
 				899299AE2DE9DCB00054E7D4 /* QueueModel.swift in Sources */,
 				8974B3032DF0132E00830567 /* OTPUseCase.swift in Sources */,
 				8995CD1A2DE9CE1D004C6604 /* Constants.swift in Sources */,

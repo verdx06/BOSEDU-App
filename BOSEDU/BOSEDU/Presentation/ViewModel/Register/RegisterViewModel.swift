@@ -25,6 +25,16 @@ final class RegisterViewModel: ObservableObject {
         self.useCase = useCase
     }
     
+    private func registerUser() {
+        Task {
+            do {
+                try await useCase.register(email: email, password: password, name: name)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     func register() {
         let result = useCase.checkCorrectData(
             email: email,
@@ -36,6 +46,11 @@ final class RegisterViewModel: ObservableObject {
         passwordError = result.passwordError
         passwordConfirmError = result.passwordConfirmError
         nameError = result.nameError
+        
+        if emailError.isEmpty && passwordError.isEmpty && passwordConfirmError.isEmpty && nameError.isEmpty {
+            registerUser()
+        }
+        
     }
     
 }

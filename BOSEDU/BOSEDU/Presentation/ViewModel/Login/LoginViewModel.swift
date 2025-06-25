@@ -7,6 +7,25 @@
 
 import Foundation
 
+struct User: Codable {
+    let username: String
+    let phone: String
+    let firstName: String
+    let lastName: String
+    let photoURL: String
+    let password: String
+    
+    // Если имена полей отличаются от JSON, можно использовать CodingKeys
+    enum CodingKeys: String, CodingKey {
+        case username
+        case phone
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case photoURL = "photo_url"
+        case password
+    }
+}
+
 @MainActor
 final class LoginViewModel: ObservableObject {
     
@@ -24,8 +43,15 @@ final class LoginViewModel: ObservableObject {
         self.useCase = useCase
     }
     
-    private func authorizate() {
-        print("Реализация входа")
+    @MainActor
+    private func authorizateUser() {
+        Task {
+            do {
+                try await useCase.login(email: email, password: password)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func login () {
@@ -33,7 +59,7 @@ final class LoginViewModel: ObservableObject {
         emailErrorText = result.emailError
         passwordErrorText = result.passwordError
         if emailErrorText.isEmpty && passwordErrorText.isEmpty {
-            authorizate()
+            authorizateUser()
         }
     }
     
