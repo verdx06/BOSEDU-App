@@ -4,10 +4,8 @@ from typing import Optional, List
 
 # User schemas
 class UserBase(BaseModel):
-    username: str
-    phone: str
-    first_name: str
-    last_name: str
+    email: str
+    name: str
     photo_url: Optional[str] = None
 
 class UserCreate(UserBase):
@@ -19,6 +17,10 @@ class User(UserBase):
 
     class Config:
         from_attributes = True
+
+class UserLogin(BaseModel):
+    email: str
+    password: str
 
 # News schemas
 class NewsBase(BaseModel):
