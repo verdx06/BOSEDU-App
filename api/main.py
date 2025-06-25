@@ -14,36 +14,34 @@ app = FastAPI()
 # Аутентификация
 @app.post("/token", response_model=schemas.Token)
 async def login_for_access_token(
-    form_data: OAuth2PasswordRequestForm = Depends(),
+    user_login: schemas.UserLogin,
     db: Session = Depends(get_db)
 ):
-    user = db.query(models.User).filter(models.User.username == form_data.username).first()
-    if not user or not security.verify_password(form_data.password, user.password):
+    user = db.query(models.User).filter(models.User.email == user_login.email).first()
+    if not user or not security.verify_password(user_login.password, user.password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect username or password",
+            detail="Incorrect email or password",
             headers={"WWW-Authenticate": "Bearer"},
         )
     access_token_expires = timedelta(minutes=security.ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = security.create_access_token(
-        data={"sub": user.username}, expires_delta=access_token_expires
+        data={"sub": user.email}, expires_delta=access_token_expires
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
 # Пользователи
 @app.post("/users/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
-    db_user = db.query(models.User).filter(models.User.username == user.username).first()
+    db_user = db.query(models.User).filter(models.User.email == user.email).first()
     if db_user:
-        raise HTTPException(status_code=400, detail="Username already registered")
+        raise HTTPException(status_code=400, detail="Email already registered")
     
     hashed_password = security.get_password_hash(user.password)
     db_user = models.User(
-        username=user.username,
+        email=user.email,
+        name=user.name,
         password=hashed_password,
-        phone=user.phone,
-        first_name=user.first_name,
-        last_name=user.last_name,
         photo_url=user.photo_url
     )
     db.add(db_user)
