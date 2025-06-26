@@ -20,7 +20,7 @@ public struct UserInfoResponseModel: Decodable {
    public  let id: Int
    public  let email: String
    public  let name: String
-   public  let photoUrl: String
+   public  let photo_url: String
     
     
 }

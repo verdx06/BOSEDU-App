@@ -21,7 +21,7 @@ struct UserInfoModel: Decodable {
 extension UserInfoModel {
     
     static func convert(model: UserInfoResponseModel) -> UserInfoModel {
-        return UserInfoModel(id: model.id, email: model.email, name: model.name, photo_url: model.photoUrl)
+        return UserInfoModel(id: model.id, email: model.email, name: model.name, photo_url: model.photo_url)
     }
     
 }

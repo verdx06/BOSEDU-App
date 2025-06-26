@@ -59,7 +59,7 @@ struct RegisterView: View {
                 .navigationDestination(isPresented: $rvm.isSuccess) {
                     TabbarView()
                 }
-                .alert("Error", isPresented: .constant(rvm.status.failureText != nil)) {
+                .alert(rvm.status.failureText, isPresented: $rvm.isShowAlert) {
                     Button("OK") {
                         rvm.status = .idle
                     }

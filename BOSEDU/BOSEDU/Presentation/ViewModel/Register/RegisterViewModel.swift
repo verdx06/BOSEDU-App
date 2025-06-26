@@ -24,6 +24,7 @@ final class RegisterViewModel: ObservableObject {
     
     @Published var status: LoadingStatus = .idle
     @Published var isSuccess: Bool = false
+    @Published var isShowAlert: Bool = false
     
     @Published var user: UserInfoModel?
     
@@ -42,6 +43,7 @@ final class RegisterViewModel: ObservableObject {
                 isSuccess = status == .loading
             } catch {
                 status = .failure(error.localizedDescription)
+                isShowAlert = true
             }
         }
     }

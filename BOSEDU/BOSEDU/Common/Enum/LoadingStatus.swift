@@ -20,11 +20,11 @@ enum LoadingStatus: Equatable {
         return false
     }
     
-    var failureText: String? {
+    var failureText: String {
         if case .failure(let message) = self {
             return message
         }
-        return nil
+        return ""
     }
     
 }
