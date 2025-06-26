@@ -25,7 +25,7 @@ struct RegisterView: View {
                     CustomTextFieldView(titleKey: "Re-enter Password", security: true, errorText: rvm.passwordConfirmError, text: $rvm.passwordConfirm)
                         .padding(.top, geo.size.height * 0.012)
                     
-                    PrimaryButtonView(title: "Register Now", style: .auth) {
+                    PrimaryButtonView(title: "Register Now", style: .auth, loading: rvm.status.isLoading) {
                         rvm.register()
                     }.padding(.top, geo.size.height * 0.034)
                     
@@ -56,10 +56,20 @@ struct RegisterView: View {
                 }.headerAuth(title: "Register with Email", dismiss: true)
                     .padding(.horizontal, 20)
             }.navigationBarBackButtonHidden()
+                .navigationDestination(isPresented: $rvm.isSuccess) {
+                    TabbarView()
+                }
+                .alert("Error", isPresented: .constant(rvm.status.failureText != nil)) {
+                    Button("OK") {
+                        rvm.status = .idle
+                    }
+                }
         }
     }
 }
 
 #Preview {
-    RegisterView(rvm: RegisterDI.make())
+    NavigationStack {
+        RegisterView(rvm: RegisterDI.make())
+    }
 }

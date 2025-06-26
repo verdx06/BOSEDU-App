@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import UIComponents
+import SwiftUI
 
+@MainActor
 final class RegisterViewModel: ObservableObject {
     
     @Published var email: String = ""
@@ -19,6 +22,11 @@ final class RegisterViewModel: ObservableObject {
     @Published var passwordError: String = "" 
     @Published var passwordConfirmError: String = ""
     
+    @Published var status: LoadingStatus = .idle
+    @Published var isSuccess: Bool = false
+    
+    @Published var user: UserInfoModel?
+    
     let useCase: RegisterUseCase
     
     init(useCase: RegisterUseCase) {
@@ -26,11 +34,14 @@ final class RegisterViewModel: ObservableObject {
     }
     
     private func registerUser() {
+        status = .loading
         Task {
             do {
-                try await useCase.register(email: email, password: password, name: name)
+                user = try await useCase.register(email: email, password: password, name: name)
+                status = .success
+                isSuccess = status == .loading
             } catch {
-                print(error.localizedDescription)
+                status = .failure(error.localizedDescription)
             }
         }
     }
@@ -51,6 +62,10 @@ final class RegisterViewModel: ObservableObject {
             registerUser()
         }
         
+    }
+    
+    func showFailerAlert() -> Alert {
+        return Alert(title: Text(status.failureText ?? ""))
     }
     
 }

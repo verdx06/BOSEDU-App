@@ -14,6 +14,10 @@
 		89007A6C2DFAAF430036ABF7 /* RegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A6B2DFAAF430036ABF7 /* RegisterUseCase.swift */; };
 		89007A6F2DFAAFAD0036ABF7 /* RegisterDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A6D2DFAAFAD0036ABF7 /* RegisterDI.swift */; };
 		89007A712DFAB2570036ABF7 /* ValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89007A702DFAB2570036ABF7 /* ValidationUseCase.swift */; };
+		892FB3862E0D114700A38329 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FB3852E0D114100A38329 /* UserInfoModel.swift */; };
+		892FB38D2E0D2FCF00A38329 /* LoadingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FB38C2E0D2FCF00A38329 /* LoadingStatus.swift */; };
+		892FB3902E0D310100A38329 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FB38F2E0D310100A38329 /* TabbarView.swift */; };
+		892FB3932E0D310D00A38329 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FB3922E0D310D00A38329 /* HomeView.swift */; };
 		895939FF2DEB2F210016683A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895939FE2DEB2F210016683A /* LoginView.swift */; };
 		89593A032DEB38D90016683A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A022DEB38D90016683A /* LoginViewModel.swift */; };
 		89593A062DEB4FE10016683A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89593A052DEB4FE10016683A /* RegisterView.swift */; };
@@ -74,6 +78,10 @@
 		89007A6B2DFAAF430036ABF7 /* RegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUseCase.swift; sourceTree = "<group>"; };
 		89007A6D2DFAAFAD0036ABF7 /* RegisterDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDI.swift; sourceTree = "<group>"; };
 		89007A702DFAB2570036ABF7 /* ValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUseCase.swift; sourceTree = "<group>"; };
+		892FB3852E0D114100A38329 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		892FB38C2E0D2FCF00A38329 /* LoadingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStatus.swift; sourceTree = "<group>"; };
+		892FB38F2E0D310100A38329 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		892FB3922E0D310D00A38329 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		895939FE2DEB2F210016683A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		89593A022DEB38D90016683A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		89593A052DEB4FE10016683A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -141,6 +149,22 @@
 				89007A6D2DFAAFAD0036ABF7 /* RegisterDI.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		892FB38E2E0D30F300A38329 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				892FB38F2E0D310100A38329 /* TabbarView.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		892FB3912E0D310500A38329 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				892FB3922E0D310D00A38329 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		895939FD2DEB2EF30016683A /* Login */ = {
@@ -218,6 +242,7 @@
 		899299AB2DE9DC9E0054E7D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				892FB3852E0D114100A38329 /* UserInfoModel.swift */,
 				899299AC2DE9DCA40054E7D4 /* Queue */,
 			);
 			path = Models;
@@ -314,6 +339,7 @@
 		8995CC752DE9A9C6004C6604 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				892FB38C2E0D2FCF00A38329 /* LoadingStatus.swift */,
 				8995CD0E2DE9C75F004C6604 /* Images.swift */,
 				8974B30B2DF2078B00830567 /* NetworkError.swift */,
 			);
@@ -331,6 +357,8 @@
 		8995CC772DE9A9D8004C6604 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				892FB3912E0D310500A38329 /* Home */,
+				892FB38E2E0D30F300A38329 /* Tabbar */,
 				89C449792E0923D800151C6B /* LaunchScreen */,
 				89593A102DECD81D0016683A /* OTP */,
 				89593A0A2DEB547C0016683A /* ForgotPassword */,
@@ -551,6 +579,7 @@
 				89D561852DF9CE9400B4FF79 /* String.swift in Sources */,
 				89007A4E2DFAA8E10036ABF7 /* LoginDI.swift in Sources */,
 				8995CD162DE9CA54004C6604 /* SplashScreenDI.swift in Sources */,
+				892FB3932E0D310D00A38329 /* HomeView.swift in Sources */,
 				89007A6F2DFAAFAD0036ABF7 /* RegisterDI.swift in Sources */,
 				89593A062DEB4FE10016683A /* RegisterView.swift in Sources */,
 				8995CD0F2DE9C75F004C6604 /* Images.swift in Sources */,
@@ -562,15 +591,18 @@
 				899299AE2DE9DCB00054E7D4 /* QueueModel.swift in Sources */,
 				8974B3032DF0132E00830567 /* OTPUseCase.swift in Sources */,
 				8995CD1A2DE9CE1D004C6604 /* Constants.swift in Sources */,
+				892FB38D2E0D2FCF00A38329 /* LoadingStatus.swift in Sources */,
 				899299B12DE9E4EF0054E7D4 /* OnboardingViewModel.swift in Sources */,
 				89593A0F2DECC5930016683A /* ForgotPasswordViewModel.swift in Sources */,
 				89D561832DF9C71000B4FF79 /* Int.swift in Sources */,
 				8974B3072DF0139400830567 /* OTPViewModel.swift in Sources */,
 				8995CC6E2DE9A9A6004C6604 /* OnboardingView.swift in Sources */,
+				892FB3862E0D114700A38329 /* UserInfoModel.swift in Sources */,
 				89593A092DEB50060016683A /* RegisterViewModel.swift in Sources */,
 				8974B30C2DF2078B00830567 /* NetworkError.swift in Sources */,
 				89593A032DEB38D90016683A /* LoginViewModel.swift in Sources */,
 				895939FF2DEB2F210016683A /* LoginView.swift in Sources */,
+				892FB3902E0D310100A38329 /* TabbarView.swift in Sources */,
 				89007A6C2DFAAF430036ABF7 /* RegisterUseCase.swift in Sources */,
 				8995CC7C2DE9AF20004C6604 /* SplashScreenView.swift in Sources */,
 				89593A0C2DEB54900016683A /* ForgotPasswordView.swift in Sources */,

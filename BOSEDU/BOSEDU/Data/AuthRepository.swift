@@ -9,7 +9,7 @@ import Foundation
 import NetworkService
 
 protocol AuthRepository {
-    func register(email: String, password: String, name: String) async throws
+    func register(email: String, password: String, name: String) async throws -> UserInfoModel
     func login(email: String, password: String) async throws
 }
 
@@ -21,12 +21,13 @@ final class AuthRepositoryImpl: AuthRepository {
         self.networkRequest = networkRequest
     }
      
-    func register(email: String, password: String, name: String) async throws {
-        try await networkRequest.register(email: email, password: password, name: name)
+    func register(email: String, password: String, name: String) async throws -> UserInfoModel {
+        let result = try await networkRequest.register(email: email, password: password, name: name)
+        return UserInfoModel.convert(model: result)
     }
     
     func login(email: String, password: String) async throws {
-        try await networkRequest.login(email: email, password: password)
+        let result = try await networkRequest.login(email: email, password: password)
     }
     
     

@@ -15,7 +15,7 @@ public struct Constants {
         case news = "/news/"
         case events = "/events/"
         case advertisements = "/advertisements/"
-        case token = "/token/"
+        case login = "/token/"
     }
     
 }

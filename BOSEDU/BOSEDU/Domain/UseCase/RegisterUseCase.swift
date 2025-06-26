@@ -10,7 +10,7 @@ import SwiftUI
 
 protocol RegisterUseCase {
     func checkCorrectData(email: String, password: String, passwordConfirm: String, name: String) -> (emailError: String, passwordError: String, passwordConfirmError: String, nameError: String)
-    func register(email: String, password: String, name: String) async throws
+    func register(email: String, password: String, name: String) async throws -> UserInfoModel
 }
 
 final class RegisterUseCaseImpl: RegisterUseCase {
@@ -24,8 +24,8 @@ final class RegisterUseCaseImpl: RegisterUseCase {
         self.repository = repository
     }
     
-    func register(email: String, password: String, name: String) async throws {
-        try await repository.register(email: email, password: password, name: name)
+    func register(email: String, password: String, name: String) async throws -> UserInfoModel {
+        return try await repository.register(email: email, password: password, name: name)
     }
     
     func checkCorrectData(email: String, password: String, passwordConfirm: String, name: String) -> (emailError: String, passwordError: String, passwordConfirmError: String, nameError: String) {

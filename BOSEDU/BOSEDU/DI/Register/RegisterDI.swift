@@ -8,6 +8,7 @@
 import Foundation
 import NetworkService
 
+@MainActor
 final class RegisterDI {
     
     static func make() -> RegisterViewModel {

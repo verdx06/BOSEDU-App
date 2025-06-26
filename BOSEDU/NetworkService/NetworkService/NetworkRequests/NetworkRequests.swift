@@ -8,8 +8,8 @@
 import Foundation
 
 public protocol NetworkRequests {
-    func register(email: String, password: String, name: String) async throws
-    func login(email: String, password: String) async throws
+    func register(email: String, password: String, name: String) async throws -> UserInfoResponseModel
+    func login(email: String, password: String) async throws -> TokenResponseModel
 }
 
 public final class NetworkRequestsImpl: NetworkRequests {
@@ -18,22 +18,26 @@ public final class NetworkRequestsImpl: NetworkRequests {
     
     public init () {}
     
-    public func register(email: String, password: String, name: String) async throws {
-        let result = try await request.execute(endpoint: .users, method: .post, parametars: [
-            "email": name,
-            "phone": "",
-            "username": name,
+    public func register(email: String, password: String, name: String) async throws -> UserInfoResponseModel {
+        let result: UserInfoResponseModel = try await request.execute(endpoint: .users, method: .post, parametars: [
+            "email": email,
+            "name": name,
             "photo_url": "",
             "password": password
-        ], token: "")
-        print(String(data: result, encoding: .utf8) ?? "")
+        ])
+        
+        return result
+        
     }
     
-    public func login(email: String, password: String) async throws {
-        let result = try await request.execute(endpoint: .token, method: .post, parametars: [
+    public func login(email: String, password: String) async throws -> TokenResponseModel {
+        let result: TokenResponseModel = try await request.execute(endpoint: .login, method: .post, parametars: [
             "email": email,
             "password": password
-        ], token: "")
+        ])
+        
+        return result
+        
     }
     
     
