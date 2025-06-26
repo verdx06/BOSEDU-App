@@ -6,6 +6,7 @@ from typing import List
 import models, schemas, security
 from database import engine, get_db
 from sqlalchemy import func
+from sqlalchemy.exc import IntegrityError
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -36,7 +37,6 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = db.query(models.User).filter(models.User.email == user.email).first()
     if db_user:
         raise HTTPException(status_code=400, detail="Email already registered")
-    
     hashed_password = security.get_password_hash(user.password)
     db_user = models.User(
         email=user.email,
@@ -45,7 +45,11 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
         photo_url=user.photo_url
     )
     db.add(db_user)
-    db.commit()
+    try:
+        db.commit()
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(status_code=400, detail="Email already registered (db constraint)")
     db.refresh(db_user)
     return db_user
 
