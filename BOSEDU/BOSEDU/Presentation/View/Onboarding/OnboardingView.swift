@@ -59,8 +59,8 @@ struct OnboardingView: View {
                         
                         Spacer()
                 }
+                    .padding(.horizontal, 20)
             }
-                .padding(.horizontal, 20)
             }.fullScreenCover(isPresented: $ovm.isNavigate) {
                 LoginView(lvm: LoginDI.make())
             }
