@@ -10,7 +10,7 @@ import NetworkService
 
 protocol AuthRepository {
     func register(email: String, password: String, name: String) async throws -> UserInfoModel
-    func login(email: String, password: String) async throws
+    func login(email: String, password: String) async throws -> LoginModel
 }
 
 final class AuthRepositoryImpl: AuthRepository {
@@ -26,8 +26,10 @@ final class AuthRepositoryImpl: AuthRepository {
         return UserInfoModel.convert(model: result)
     }
     
-    func login(email: String, password: String) async throws {
+    func login(email: String, password: String) async throws -> LoginModel {
         let result = try await networkRequest.login(email: email, password: password)
+        UserDefaults.standard.set(result.accessToken, forKey: "token")
+        return LoginModel.convert(from: result)
     }
     
     
