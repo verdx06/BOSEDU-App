@@ -8,6 +8,7 @@
 import Foundation
 import UIComponents
 import SwiftUI
+import NetworkService
 
 @MainActor
 final class RegisterViewModel: ObservableObject {
@@ -41,8 +42,11 @@ final class RegisterViewModel: ObservableObject {
                 user = try await useCase.register(email: email, password: password, name: name)
                 status = .success
                 isSuccess = status == .loading
-            } catch {
+            } catch let error as NetworkError{
                 status = .failure(error.localizedDescription)
+                isShowAlert = true
+            } catch let error as ServerErrorResponse {
+                status = .failure(error.detail)
                 isShowAlert = true
             }
         }
