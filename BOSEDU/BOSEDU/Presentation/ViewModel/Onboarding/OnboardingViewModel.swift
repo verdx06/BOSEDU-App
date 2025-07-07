@@ -15,26 +15,36 @@ final class OnboardingViewModel: ObservableObject {
         .init(id: 3, title: "Educational News"),
         .init(id: 4, title: "Private Discussion"),
     ]
-    
+    @Published var remainingScreens: [QueueModel] = []
     @Published var currentScreen: QueueModel?
     @Published var buttonTitle: String = "Next"
     @Published var isNavigate: Bool = false
     
     init() {
+        if let savedId = UserDefaults.standard.object(forKey: "screen") as? Int{
+            print(savedId)
+            remainingScreens = queue.filter({ $0.id > savedId
+            })
+        }
         nextScreen()
     }
     
     func nextScreen() {
-        guard !queue.isEmpty else {
+        guard !remainingScreens.isEmpty else {
             isNavigate = true
             return
         }
         
-        let index = queue.removeFirst()
-        
+        let index = remainingScreens.removeFirst()
         currentScreen = index
         buttonTitle = index.id == 4 ? "Start Now!" : "Next"
         
+        save(id: index.id)
+        
+    }
+    
+    func save(id: Int) {
+        UserDefaults.standard.set(id, forKey: "screen")
     }
     
 }
