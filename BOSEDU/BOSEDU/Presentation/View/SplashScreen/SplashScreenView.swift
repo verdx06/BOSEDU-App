@@ -20,21 +20,36 @@ struct SplashScreenView: View {
                 HStack(spacing: 0) {
                     Image(Images.logo)
                         .padding(.trailing, 4)
+                        .offset(x: svm.imageOffset, y: 0)
+                        .animation(.easeInOut(duration: 1), value: svm.imageOffset)
                     Text(ConstantsOnboarding.title)
                         .robotoFont(size: ConstantsOnboarding.title_size, font: .extrabold)
                         .foregroundStyle(Color.neutral0)
+                        .opacity(svm.textOpacity)
+                        .animation(.easeInOut(duration: 1).delay(0.5), value: svm.textOpacity)
                 }
                 Text(ConstantsOnboarding.subtitle)
                     .robotoFont(size: ConstantsOnboarding.subtitle_size)
                     .foregroundStyle(Color.neutral0)
                     .tracking(6)
+                    .opacity(svm.textOpacity)
+                    .animation(.easeInOut(duration: 1).delay(0.5), value: svm.textOpacity)
             }
-        }
-        .fullScreenCover(isPresented: $svm.isOnboarding, content: {
-            OnboardingView()
-        })
-        .onAppear {
-            svm.startLoading()
+            if !svm.isLoading {
+                if svm.isOnboarding {
+                    OnboardingView()
+                } else {
+                    LoginView(lvm: LoginDI.make())
+                }
+            }
+            
+        }.onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                // Перемещаем картинку влево
+                svm.imageOffset = 0
+                // Показываем текст
+                svm.textOpacity = 1
+            }
         }
     }
 }
