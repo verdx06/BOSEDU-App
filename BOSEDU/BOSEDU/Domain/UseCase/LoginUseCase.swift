@@ -25,7 +25,7 @@ final class LoginUseCaseImpl: LoginUseCase {
     }
     
     func login(email: String, password: String) async throws {
-        try await repository.login(email: email, password: password)
+       let result = try await repository.login(email: email, password: password)
     }
     
     func checkCorrectData(email: String, password: String) -> (emailError: String, passwordError: String) {
