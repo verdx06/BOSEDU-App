@@ -19,7 +19,7 @@ public final class NetworkRequestsImpl: NetworkRequests {
     public init () {}
     
     public func register(email: String, password: String, name: String) async throws -> UserInfoResponseModel {
-        let result: UserInfoResponseModel = try await request.execute(endpoint: .users, method: .post, parametars: [
+        let result: UserInfoResponseModel = try await request.execute(endpoint: .users, method: .post, parameters: [
             "email": email,
             "name": name,
             "photo_url": "",
@@ -31,7 +31,7 @@ public final class NetworkRequestsImpl: NetworkRequests {
     }
     
     public func login(email: String, password: String) async throws -> TokenResponseModel {
-        let result: TokenResponseModel = try await request.execute(endpoint: .login, method: .post, parametars: [
+        let result: TokenResponseModel = try await request.execute(endpoint: .login, method: .post, parameters: [
             "email": email,
             "password": password
         ])
