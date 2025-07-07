@@ -9,6 +9,7 @@ import Foundation
 
 final class SplashScreenDI {
     
+    @MainActor
     static func make() -> SplashScreenViewModel {
         let useCase = SplashScreenUseCaseImpl()
         return SplashScreenViewModel(useCase: useCase)
