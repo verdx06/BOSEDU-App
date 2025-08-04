@@ -7,18 +7,27 @@
 
 import SwiftUI
 import PopupView
+import UIComponents
 
 struct NetworkModifier: ViewModifier {
     
-    @Binding var isDisconnected: Bool
+    @EnvironmentObject private var networkMonitor: NetworkMonitor
+    
+    @State private var isDisconnect: Bool = false
     
     func body(content: Content) -> some View {
         content
-            .popup(isPresented: $isDisconnected) {
+            .onChange(of: networkMonitor.isConnected) { isConnect in
+                
+                isDisconnect = !isConnect
+                
+            }
+            .popup(isPresented: $isDisconnect) {
                 Text("Проблемы с интернетом")
                     .frame(maxWidth: .infinity)
                     .frame(height: 60)
-                    .background(Color.red.opacity(0.8))
+                    .robotoFont(size: 16, font: .bold)
+                    .background(Color.accent50)
                     .foregroundColor(.white)
                     .cornerRadius(25)
                     .padding(.horizontal)
@@ -26,7 +35,8 @@ struct NetworkModifier: ViewModifier {
                 $0
                     .type(.floater())
                     .position(.top)
-                    .autohideIn(5)
+                    .autohideIn(3)
+                    .closeOnTap(true)
             }
     }
     
