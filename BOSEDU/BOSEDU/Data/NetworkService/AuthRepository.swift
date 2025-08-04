@@ -11,6 +11,7 @@ import NetworkService
 protocol AuthRepository {
     func register(email: String, password: String, name: String) async throws -> UserInfoModel
     func login(email: String, password: String) async throws -> LoginModel
+    func sendEmailCode(email: String, code: String) async throws
 }
 
 final class AuthRepositoryImpl: AuthRepository {
@@ -32,5 +33,9 @@ final class AuthRepositoryImpl: AuthRepository {
         return LoginModel.convert(from: result)
     }
     
+    func sendEmailCode(email: String, code: String) async throws {
+        UserDefaults.standard.set(code, forKey: "codeForResend")
+        try await networkRequest.sendCode(email: email, code: code)
+    }
     
 }
