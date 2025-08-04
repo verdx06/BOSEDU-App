@@ -13,20 +13,33 @@ final class ForgotPasswordViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var emailErrorText: String = ""
     @Published var isNavigate: Bool = false
+    @Published var isLoading: Bool = false
     
-    let useCase: ValidationUseCase
+    let validationUseCase: ValidationUseCase
+    let useCase: ForgotPasswordUseCase
     
-    init(useCase: ValidationUseCase = BaseValidationUseCase()) {
+    init(validationUseCase: ValidationUseCase = BaseValidationUseCase(), useCase: ForgotPasswordUseCase) {
+
+        self.validationUseCase = validationUseCase
         self.useCase = useCase
     }
     
+    @MainActor
     func sendEmailCode() {
-        
-        emailErrorText = useCase.validateEmail(email)
-        if emailErrorText.isEmpty {
-            isNavigate = true
+        Task {
+                do {
+                    isLoading = true
+                    self.emailErrorText = validationUseCase.validateEmail(email)
+                    if emailErrorText.isEmpty {
+                        try await useCase.sendCode(email: email)
+                        self.isNavigate = true
+                    }
+                    isLoading = false
+                } catch {
+                    print(error.localizedDescription)
+                    isLoading = false
+                }
+            }
         }
-        
-    }
     
 }
