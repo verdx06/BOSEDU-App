@@ -11,9 +11,9 @@ import UIComponents
 struct RegisterView: View {
     
     @StateObject var rvm: RegisterViewModel
+    @EnvironmentObject private var networkMonitor: NetworkMonitor
     
     var body: some View {
-        NavigationStack {
             GeometryReader { geo in
                 VStack {
                     CustomTextFieldView(titleKey: "Name", errorText: rvm.nameError, text: $rvm.name)
@@ -55,21 +55,25 @@ struct RegisterView: View {
                     
                 }.headerAuth(title: "Register with Email", dismiss: true)
                     .padding(.horizontal, 20)
-            }.navigationBarBackButtonHidden()
+            }
+            .networkConnect()
+            .navigationBarBackButtonHidden()
                 .navigationDestination(isPresented: $rvm.isSuccess) {
                     TabbarView()
+                        .environmentObject(networkMonitor)
                 }
                 .alert(rvm.status.failureText, isPresented: $rvm.isShowAlert) {
                     Button("OK") {
                         rvm.status = .idle
                     }
                 }
-        }
     }
 }
 
 #Preview {
     NavigationStack {
         RegisterView(rvm: RegisterDI.make())
+            .environmentObject(NetworkMonitor())
     }
 }
+
