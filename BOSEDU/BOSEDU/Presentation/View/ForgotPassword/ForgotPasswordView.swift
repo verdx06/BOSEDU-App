@@ -10,7 +10,7 @@ import UIComponents
 
 public struct ForgotPasswordView: View {
     
-    @StateObject var fvm = ForgotPasswordViewModel()
+    @StateObject var fvm: ForgotPasswordViewModel
     
     public var body: some View {
         GeometryReader { geo in
@@ -30,7 +30,7 @@ public struct ForgotPasswordView: View {
                 CustomTextFieldView(titleKey: "Email", errorText: fvm.emailErrorText, text: $fvm.email)
                     .padding(.top, geo.size.height * 0.024)
                 
-                PrimaryButtonView(title: "Send", style: .auth) {
+                PrimaryButtonView(title: "Send", style: .auth, loading: fvm.isLoading) {
                     fvm.sendEmailCode()
                 }
                 .padding(.top, geo.size.height * 0.034)
@@ -50,6 +50,6 @@ public struct ForgotPasswordView: View {
 
 #Preview {
     NavigationStack {
-        ForgotPasswordView()
+        ForgotPasswordView(fvm: ForgotPasswordDI.make())
     }
 }
