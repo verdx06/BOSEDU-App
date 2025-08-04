@@ -13,7 +13,8 @@ final class OTPViewModel: ObservableObject {
     @Published var code: [String] = Array(repeating: "", count: 4)
     @Published var isFocuse: Int?
     @Published var seconds = 120
-    @Published var notSuccess: Bool = false
+    @Published var isError: Bool = false
+    @Published var isNavigate: Bool = false
     var timer: Timer?
     
     init(useCase: OTPUseCase) {
@@ -21,10 +22,12 @@ final class OTPViewModel: ObservableObject {
     }
     
     func sendCode() {
-        if code.joined() == "1111" {
-            notSuccess = false
+        if code.joined() == useCase.getCode() {
+            isError = false
+            isNavigate = true
+            print("kod success")
         } else {
-            notSuccess = true
+            isError = true
         }
     }
     
