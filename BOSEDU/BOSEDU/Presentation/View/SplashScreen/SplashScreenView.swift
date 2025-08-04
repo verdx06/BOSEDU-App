@@ -11,6 +11,7 @@ import UIComponents
 struct SplashScreenView: View {
     
     @StateObject var svm: SplashScreenViewModel
+    @EnvironmentObject private var networkMonitor: NetworkMonitor
     
     var body: some View {
         ZStack {
@@ -40,6 +41,7 @@ struct SplashScreenView: View {
                     OnboardingView()
                 } else {
                     LoginView(lvm: LoginDI.make())
+                        .environmentObject(networkMonitor)
                 }
             }
             
