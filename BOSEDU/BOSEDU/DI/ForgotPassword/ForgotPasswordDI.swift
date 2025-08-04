@@ -1,5 +1,5 @@
 //
-//  OTPDIContainer.swift
+//  ForgotPasswordDI.swift
 //  BOSEDU
 //
 //  Created by Виталий Багаутдинов on 04.06.2025.
@@ -8,14 +8,14 @@
 import Foundation
 import NetworkService
 
-final class OTPDI {
+final class ForgotPasswordDI {
     
-    static func make() -> OTPViewModel {
+    static func make() -> ForgotPasswordViewModel {
         
         let networkRequest: NetworkRequests = NetworkRequestsImpl()
         let repository: AuthRepository = AuthRepositoryImpl(networkRequest: networkRequest)
-        let useCase: OTPUseCase = OTPUseCaseImpl(repository: repository)
-        return OTPViewModel(useCase: useCase)
+        let useCase: ForgotPasswordUseCase = ForgotPasswordUseCaseImpl(repository: repository)
+        return ForgotPasswordViewModel(useCase: useCase)
         
     }
     

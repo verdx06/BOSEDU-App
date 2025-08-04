@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+final class DIContainer {
+    
+    static let shared = DIContainer()
+    
+    func make<T>() -> T {
+        
+    }
+    
+}

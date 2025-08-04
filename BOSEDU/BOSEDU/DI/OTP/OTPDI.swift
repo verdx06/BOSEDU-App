@@ -11,7 +11,8 @@ final class OTPDI {
     
     static func make() -> OTPViewModel {
         
-        let useCase = OTPUseCaseImpl()
+        let repository: OTPRepository = OTPRepositoryImpl()
+        let useCase: OTPUseCase = OTPUseCaseImpl(repository: repository)
         return OTPViewModel(useCase: useCase)
         
     }

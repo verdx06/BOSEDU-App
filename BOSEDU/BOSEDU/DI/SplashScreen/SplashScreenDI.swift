@@ -11,7 +11,8 @@ final class SplashScreenDI {
     
     @MainActor
     static func make() -> SplashScreenViewModel {
-        let useCase = SplashScreenUseCaseImpl()
+        let repository: SplashRepository = SplashRepositoryImpl()
+        let useCase: SplashScreenUseCase = SplashScreenUseCaseImpl(repository: repository)
         return SplashScreenViewModel(useCase: useCase)
     }
     
