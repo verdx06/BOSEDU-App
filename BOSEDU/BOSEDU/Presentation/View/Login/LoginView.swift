@@ -11,6 +11,7 @@ import UIComponents
 struct LoginView: View {
     
     @StateObject var lvm: LoginViewModel
+    @EnvironmentObject private var networkMonitor: NetworkMonitor
     
     var body: some View {
         NavigationStack {
@@ -22,7 +23,7 @@ struct LoginView: View {
                         .padding(.top, geo.size.height * 0.012)
                     
                     NavigationLink {
-                        ForgotPasswordView()
+                        ForgotPasswordView(fvm: ForgotPasswordDI.make())
                     } label: {
                         Text("Forgot Password")
                             .foregroundStyle(Color.primary70)
@@ -39,6 +40,7 @@ struct LoginView: View {
                             .foregroundStyle(Color.neutral100)
                         NavigationLink {
                             RegisterView(rvm: RegisterDI.make())
+                                .environmentObject(networkMonitor)
                         } label: {
                             Text("Here!")
                                 .robotoFont(size: 12, font: .semiBold)
@@ -73,6 +75,8 @@ struct LoginView: View {
                     
                 }.headerAuth(title: "Login with Email")
                     .padding(.horizontal, 20)
+                    .networkConnect()
+                    .navigationBarBackButtonHidden()
             }
         }
     }
@@ -80,4 +84,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView(lvm: LoginDI.make())
+        .environmentObject(NetworkMonitor())
 }
