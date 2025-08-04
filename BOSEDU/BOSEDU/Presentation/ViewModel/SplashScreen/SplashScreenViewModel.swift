@@ -21,18 +21,27 @@ final class SplashScreenViewModel: ObservableObject {
     
     init(useCase: SplashScreenUseCase) {
         self.useCase = useCase
-        let isonboarding = UserDefaults.standard.object(forKey: "screen") as? Int ?? 0
-        startLoading(isOnboarding: isonboarding >= 5)
+        showOnboarding()
+        startLoading()
     }
     
-    func startLoading(isOnboarding: Bool) {
+    func startLoading() {
         Task {
             do {
                 try await useCase.startSplashTimer()
                 withAnimation(.interpolatingSpring) {
                     self.isLoading = false
-                    self.isOnboarding = isOnboarding
                 }
+            } catch {
+                
+            }
+        }
+    }
+    
+    private func showOnboarding() {
+        Task {
+            do {
+                self.isOnboarding = try await useCase.isOnboardingShown()
             } catch {
                 
             }
