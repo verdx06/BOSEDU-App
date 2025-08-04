@@ -25,6 +25,7 @@ public struct PrimaryButtonView: View {
         if loading {
             ProgressView().padding(.horizontal, 20)
                 .frame(maxWidth: .infinity)
+                .tint(.white)
                     .frame(height: 50)
                     .background(style == .onboarding ? Color.neutral0 : Color.primary70)
                     .cornerRadius(50)
