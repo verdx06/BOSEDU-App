@@ -96,8 +96,4 @@ public final class BaseNetworkServiceImpl: BaseNetworkService {
     public func configure(baseURL: String) {
         self.baseURL = baseURL
     }
-    
-        
-    
-    
 }

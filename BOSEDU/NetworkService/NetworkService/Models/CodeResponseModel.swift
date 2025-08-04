@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct CodeResponseModel: Decodable {
+    let id: String
+}

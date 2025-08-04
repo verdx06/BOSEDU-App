@@ -9,6 +9,7 @@ import Foundation
 
 public struct Constants {
     static let baseURLString = "http://localhost:8000"
+    static let emailURLString = "https://api.resend.com"
     
     public enum Path: String {
         case users = "/users/"
@@ -16,6 +17,6 @@ public struct Constants {
         case events = "/events/"
         case advertisements = "/advertisements/"
         case login = "/token/"
+        case email = "/emails"
     }
-    
 }
