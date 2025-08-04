@@ -35,7 +35,7 @@ struct OTPView: View {
                 
                 HStack {
                     ForEach(0..<4, id: \.self) { index in
-                        CustomTextFieldView(titleKey: "", style: .OTP, showError: ovm.notSuccess, text: $ovm.code[index])
+                        CustomTextFieldView(titleKey: "", style: .OTP, showError: ovm.isError, text: $ovm.code[index])
                             .focused($isFocuse, equals: index)
                             .onChange(of: ovm.code[index]) { newValue in
                                 ovm.handleOTPChange(index: index, newValue: newValue)
@@ -62,7 +62,11 @@ struct OTPView: View {
                 
                 Spacer()
                 
-            }.headerAuth(title: "OTP Request", dismiss: true).navigationBarBackButtonHidden()
+            }
+            .navigationDestination(isPresented: $ovm.isNavigate, destination: {
+                NewPasswordView()
+            })
+            .headerAuth(title: "OTP Request", dismiss: true).navigationBarBackButtonHidden()
                 .onAppear {
                     isFocuse = 0
                 }
