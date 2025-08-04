@@ -45,6 +45,7 @@ public struct CustomTextFieldView: View {
                         .modifier(TextFieldModifier(error: hasError))
                 } else {
                     TextField("", text: $text)
+                        .keyboardType(style == .OTP ? .numberPad : .default)
                         .modifier(TextFieldModifier(style: style, error: hasError))
                     
                 }
@@ -69,7 +70,7 @@ public struct CustomTextFieldView: View {
 
 #Preview {
     VStack(spacing: 20) {
-        CustomTextFieldView(titleKey: "Email", errorText: "Неверный формат", text: .constant(""))
+        CustomTextFieldView(titleKey: "Email", style: .OTP, errorText: "Неверный формат", text: .constant(""))
         CustomTextFieldView(titleKey: "Password", security: true, text: .constant(""))
     }
     .padding()
