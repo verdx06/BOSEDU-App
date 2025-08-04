@@ -37,4 +37,14 @@ public extension Color {
     static let neutral100 = Color.hex000000
 
     // MARK: - Accent Colors (10...100)
+    static let accent10   = Color.hexFFEBEC
+    static let accent20  = Color.hexFFBFC3
+    static let accent30  = Color.hexFF9399
+    static let accent40  = Color.hexFF6770
+    static let accent50  = Color.hexFF3A46
+    static let accent60  = Color.hexE12632
+    static let accent70  = Color.hexBF1520
+    static let accent80  = Color.hex9D0811
+    static let accent90  = Color.hex7B0008
+    static let accent100  = Color.hex590005
 }
