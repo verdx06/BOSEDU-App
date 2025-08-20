@@ -47,6 +47,8 @@
 		8995CD122DE9C87F004C6604 /* SplashScreenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD112DE9C87F004C6604 /* SplashScreenUseCase.swift */; };
 		8995CD162DE9CA54004C6604 /* SplashScreenDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD152DE9CA54004C6604 /* SplashScreenDI.swift */; };
 		8995CD1A2DE9CE1D004C6604 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995CD192DE9CE1D004C6604 /* Constants.swift */; };
+		89A70B892E32975D0003CC1F /* NewPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A70B882E32975D0003CC1F /* NewPasswordViewModel.swift */; };
+		89A70BBC2E3694230003CC1F /* PopUpModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A70BBB2E3694230003CC1F /* PopUpModifier.swift */; };
 		89C449042E08A65200151C6B /* NetworkService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C449032E08A65200151C6B /* NetworkService.framework */; };
 		89C449052E08A65200151C6B /* NetworkService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89C449032E08A65200151C6B /* NetworkService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89C449072E08A6D600151C6B /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C449062E08A6D600151C6B /* AuthRepository.swift */; };
@@ -54,6 +56,15 @@
 		89C4497B2E0923F000151C6B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C4497A2E0923F000151C6B /* Launch Screen.storyboard */; };
 		89D561832DF9C71000B4FF79 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D561822DF9C71000B4FF79 /* Int.swift */; };
 		89D561852DF9CE9400B4FF79 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D561842DF9CE9400B4FF79 /* String.swift */; };
+		89DE6C912E1D8122000A5690 /* SplashRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DE6C902E1D8122000A5690 /* SplashRepository.swift */; };
+		89DE6C9A2E202D18000A5690 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DE6C992E202D18000A5690 /* NetworkMonitor.swift */; };
+		89DE6CA12E2BD5C1000A5690 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 89DE6CA02E2BD5C1000A5690 /* PopupView */; };
+		89DE6CD92E2BE0C7000A5690 /* NetworkModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DE6CD62E2BE0C7000A5690 /* NetworkModifier.swift */; };
+		89DE6CDB2E2BE0D9000A5690 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DE6CDA2E2BE0D7000A5690 /* View.swift */; };
+		89DE6D182E2D5F80000A5690 /* ForgotPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DE6D172E2D5F80000A5690 /* ForgotPasswordUseCase.swift */; };
+		89DE6D1B2E2D5FD4000A5690 /* ForgotPasswordDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DE6D192E2D5FD4000A5690 /* ForgotPasswordDI.swift */; };
+		89DE6D332E2E1DEA000A5690 /* OTPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DE6D322E2E1DE1000A5690 /* OTPRepository.swift */; };
+		89EF7D412E30C4B400A92713 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF7D402E30C4B400A92713 /* NewPasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -114,12 +125,22 @@
 		8995CD112DE9C87F004C6604 /* SplashScreenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenUseCase.swift; sourceTree = "<group>"; };
 		8995CD152DE9CA54004C6604 /* SplashScreenDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenDI.swift; sourceTree = "<group>"; };
 		8995CD192DE9CE1D004C6604 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89A70B882E32975D0003CC1F /* NewPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewModel.swift; sourceTree = "<group>"; };
+		89A70BBB2E3694230003CC1F /* PopUpModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModifier.swift; sourceTree = "<group>"; };
 		89C449032E08A65200151C6B /* NetworkService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C449062E08A6D600151C6B /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		89C449772E0921AA00151C6B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		89C4497A2E0923F000151C6B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		89D561822DF9C71000B4FF79 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		89D561842DF9CE9400B4FF79 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		89DE6C902E1D8122000A5690 /* SplashRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRepository.swift; sourceTree = "<group>"; };
+		89DE6C992E202D18000A5690 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		89DE6CD62E2BE0C7000A5690 /* NetworkModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModifier.swift; sourceTree = "<group>"; };
+		89DE6CDA2E2BE0D7000A5690 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		89DE6D172E2D5F80000A5690 /* ForgotPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUseCase.swift; sourceTree = "<group>"; };
+		89DE6D192E2D5FD4000A5690 /* ForgotPasswordDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDI.swift; sourceTree = "<group>"; };
+		89DE6D322E2E1DE1000A5690 /* OTPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRepository.swift; sourceTree = "<group>"; };
+		89EF7D402E30C4B400A92713 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89DE6CA12E2BD5C1000A5690 /* PopupView in Frameworks */,
 				89007A422DF9FA7B0036ABF7 /* UIComponents.framework in Frameworks */,
 				89C449042E08A65200151C6B /* NetworkService.framework in Frameworks */,
 			);
@@ -320,6 +342,7 @@
 		8995CC732DE9A9BA004C6604 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				89DE6CD82E2BE0C7000A5690 /* ViewModifier */,
 				8995CD182DE9CE05004C6604 /* Constants */,
 				8995CC852DE9B3BF004C6604 /* Font */,
 				8995CC742DE9A9C2004C6604 /* Extensions */,
@@ -331,6 +354,7 @@
 		8995CC742DE9A9C2004C6604 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				89DE6CDA2E2BE0D7000A5690 /* View.swift */,
 				89D561822DF9C71000B4FF79 /* Int.swift */,
 				89D561842DF9CE9400B4FF79 /* String.swift */,
 			);
@@ -357,6 +381,7 @@
 		8995CC772DE9A9D8004C6604 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89EF7D3F2E30C3CE00A92713 /* NewPassword */,
 				892FB3912E0D310500A38329 /* Home */,
 				892FB38E2E0D30F300A38329 /* Tabbar */,
 				89C449792E0923D800151C6B /* LaunchScreen */,
@@ -373,6 +398,7 @@
 		8995CC782DE9A9D8004C6604 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				89A70B872E32974B0003CC1F /* NewPassword */,
 				8974B3052DF0138700830567 /* OTP */,
 				89593A0D2DECC57F0016683A /* ForgotPassword */,
 				89593A072DEB4FF60016683A /* Register */,
@@ -438,6 +464,7 @@
 				89007A4A2DFAA6CF0036ABF7 /* LoginUseCase.swift */,
 				89007A6B2DFAAF430036ABF7 /* RegisterUseCase.swift */,
 				89007A702DFAB2570036ABF7 /* ValidationUseCase.swift */,
+				89DE6D172E2D5F80000A5690 /* ForgotPasswordUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -448,6 +475,7 @@
 				89007A4C2DFAA8CF0036ABF7 /* Login */,
 				89007A6E2DFAAFAD0036ABF7 /* Register */,
 				8974B3082DF013AB00830567 /* OTP */,
+				89DE6D1A2E2D5FD4000A5690 /* ForgotPassword */,
 				8995CD142DE9CA41004C6604 /* SplashScreen */,
 			);
 			path = DI;
@@ -469,6 +497,22 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		89A70B872E32974B0003CC1F /* NewPassword */ = {
+			isa = PBXGroup;
+			children = (
+				89A70B882E32975D0003CC1F /* NewPasswordViewModel.swift */,
+			);
+			path = NewPassword;
+			sourceTree = "<group>";
+		};
+		89A70BBA2E3694110003CC1F /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				89A70BBB2E3694230003CC1F /* PopUpModifier.swift */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
 		89C449762E09218E00151C6B /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,9 +532,61 @@
 		89D5630E2DF9EAD200B4FF79 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				89C449062E08A6D600151C6B /* AuthRepository.swift */,
+				89DE6C952E202CED000A5690 /* Infrastructure */,
+				89DE6C942E202CE0000A5690 /* NetworkService */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		89DE6C942E202CE0000A5690 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				89C449062E08A6D600151C6B /* AuthRepository.swift */,
+				89DE6C902E1D8122000A5690 /* SplashRepository.swift */,
+				89DE6D322E2E1DE1000A5690 /* OTPRepository.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		89DE6C952E202CED000A5690 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				89DE6C992E202D18000A5690 /* NetworkMonitor.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		89DE6CD72E2BE0C7000A5690 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				89DE6CD62E2BE0C7000A5690 /* NetworkModifier.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		89DE6CD82E2BE0C7000A5690 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				89A70BBA2E3694110003CC1F /* PopUp */,
+				89DE6CD72E2BE0C7000A5690 /* Network */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		89DE6D1A2E2D5FD4000A5690 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				89DE6D192E2D5FD4000A5690 /* ForgotPasswordDI.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		89EF7D3F2E30C3CE00A92713 /* NewPassword */ = {
+			isa = PBXGroup;
+			children = (
+				89EF7D402E30C4B400A92713 /* NewPasswordView.swift */,
+			);
+			path = NewPassword;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +607,7 @@
 			);
 			name = BOSEDU;
 			packageProductDependencies = (
+				89DE6CA02E2BD5C1000A5690 /* PopupView */,
 			);
 			productName = BOSEDU;
 			productReference = 8995CC592DE9A619004C6604 /* BOSEDU.app */;
@@ -540,6 +637,9 @@
 			);
 			mainGroup = 8995CC502DE9A618004C6604;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				89DE6C9F2E2BD5C1000A5690 /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8995CC5A2DE9A619004C6604 /* Products */;
 			projectDirPath = "";
@@ -576,15 +676,18 @@
 			files = (
 				8995CD122DE9C87F004C6604 /* SplashScreenUseCase.swift in Sources */,
 				89593A122DECD82C0016683A /* OTPView.swift in Sources */,
+				89DE6D332E2E1DEA000A5690 /* OTPRepository.swift in Sources */,
 				89D561852DF9CE9400B4FF79 /* String.swift in Sources */,
 				89007A4E2DFAA8E10036ABF7 /* LoginDI.swift in Sources */,
 				8995CD162DE9CA54004C6604 /* SplashScreenDI.swift in Sources */,
+				89EF7D412E30C4B400A92713 /* NewPasswordView.swift in Sources */,
 				892FB3932E0D310D00A38329 /* HomeView.swift in Sources */,
 				89007A6F2DFAAFAD0036ABF7 /* RegisterDI.swift in Sources */,
 				89593A062DEB4FE10016683A /* RegisterView.swift in Sources */,
 				8995CD0F2DE9C75F004C6604 /* Images.swift in Sources */,
 				89C449072E08A6D600151C6B /* AuthRepository.swift in Sources */,
 				8995CC6D2DE9A9A6004C6604 /* BOSEDUApp.swift in Sources */,
+				89A70B892E32975D0003CC1F /* NewPasswordViewModel.swift in Sources */,
 				8974B30A2DF013BA00830567 /* OTPDI.swift in Sources */,
 				89007A712DFAB2570036ABF7 /* ValidationUseCase.swift in Sources */,
 				89C449782E0921AA00151C6B /* HapticsManager.swift in Sources */,
@@ -594,12 +697,18 @@
 				892FB38D2E0D2FCF00A38329 /* LoadingStatus.swift in Sources */,
 				899299B12DE9E4EF0054E7D4 /* OnboardingViewModel.swift in Sources */,
 				89593A0F2DECC5930016683A /* ForgotPasswordViewModel.swift in Sources */,
+				89DE6C912E1D8122000A5690 /* SplashRepository.swift in Sources */,
 				89D561832DF9C71000B4FF79 /* Int.swift in Sources */,
+				89DE6D182E2D5F80000A5690 /* ForgotPasswordUseCase.swift in Sources */,
 				8974B3072DF0139400830567 /* OTPViewModel.swift in Sources */,
 				8995CC6E2DE9A9A6004C6604 /* OnboardingView.swift in Sources */,
 				892FB3862E0D114700A38329 /* UserInfoModel.swift in Sources */,
+				89A70BBC2E3694230003CC1F /* PopUpModifier.swift in Sources */,
+				89DE6C9A2E202D18000A5690 /* NetworkMonitor.swift in Sources */,
+				89DE6CDB2E2BE0D9000A5690 /* View.swift in Sources */,
 				89593A092DEB50060016683A /* RegisterViewModel.swift in Sources */,
 				892A5A712E16B0C700692265 /* LoginModel.swift in Sources */,
+				89DE6CD92E2BE0C7000A5690 /* NetworkModifier.swift in Sources */,
 				89593A032DEB38D90016683A /* LoginViewModel.swift in Sources */,
 				895939FF2DEB2F210016683A /* LoginView.swift in Sources */,
 				892FB3902E0D310100A38329 /* TabbarView.swift in Sources */,
@@ -607,6 +716,7 @@
 				8995CC7C2DE9AF20004C6604 /* SplashScreenView.swift in Sources */,
 				89593A0C2DEB54900016683A /* ForgotPasswordView.swift in Sources */,
 				8995CD0D2DE9C663004C6604 /* SplashScreenViewModel.swift in Sources */,
+				89DE6D1B2E2D5FD4000A5690 /* ForgotPasswordDI.swift in Sources */,
 				89007A4B2DFAA6CF0036ABF7 /* LoginUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -834,6 +944,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		89DE6C9F2E2BD5C1000A5690 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.11;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		89DE6CA02E2BD5C1000A5690 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89DE6C9F2E2BD5C1000A5690 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8995CC512DE9A618004C6604 /* Project object */;
 }

@@ -18,21 +18,24 @@ final class OnboardingViewModel: ObservableObject {
     @Published var currentScreen: QueueModel?
     @Published var buttonTitle: String = "Next"
     @Published var isNavigate: Bool = false
-
-        init() {
-            loadLastWatchedScreen()
-        }
     
-        func loadLastWatchedScreen() {
-            if let lastwathed = UserDefaults.standard.object(forKey: "screen") as? Int {
-                if queue.first(where: { $0.id == lastwathed }) != nil {
-                    if let index = queue.firstIndex(where: { $0.id == lastwathed }) {
-                        queue.removeFirst(index)
-                    }
+    private let useCase: OnboardingUseCase
+
+    init(useCase: OnboardingUseCase) {
+        self.useCase = useCase
+        loadLastWatchedScreen()
+    }
+    
+    func loadLastWatchedScreen() {
+        if let lastWatched = useCase.getLastWatchedScreenId() {
+            if queue.first(where: { $0.id == lastWatched }) != nil {
+                if let index = queue.firstIndex(where: { $0.id == lastWatched }) {
+                    queue.removeFirst(index)
                 }
             }
-            nextScreen()
         }
+        nextScreen()
+    }
     
     func nextScreen() {
         guard !queue.isEmpty else {
@@ -49,8 +52,8 @@ final class OnboardingViewModel: ObservableObject {
         
     }
     
-    func save(id: Int) {
-        UserDefaults.standard.set(id, forKey: "screen")
+    private func save(id: Int) {
+        useCase.saveLastWatchedScreen(id: id)
     }
     
 }

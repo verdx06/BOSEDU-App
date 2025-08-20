@@ -10,59 +10,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>86</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>23</string>
+					<string>21</string>
 					<key>StartingColumnNumber</key>
-					<string>27</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>23</string>
+					<string>20</string>
 					<key>Timestamp</key>
-					<string>773261757.507394</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>BOSEDU/BOSEDU/Presentation/ViewModel/SplashScreen/SplashScreenViewModel.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>UserDefaults.standard.object(forKey: "screen") as? Int ?? 0</string>
-				<key>leading</key>
-				<string>    init(useCase: SplashScreenUseCase) {
-        self.useCase = useCase
-        let isonboarding = </string>
-				<key>trailing</key>
-				<string>
-        startLoading(isOnboarding: isonboarding &gt;= 5)
-    }
-</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>80</string>
-					<key>EndingLineNumber</key>
-					<string>23</string>
-					<key>StartingColumnNumber</key>
-					<string>25</string>
-					<key>StartingLineNumber</key>
-					<string>23</string>
-					<key>Timestamp</key>
-					<string>773261778.901323</string>
+					<string>773689160.18458</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -78,15 +34,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>UserDefaults.standard.object(forKey: "screen") as? Int{</string>
-				<key>leading</key>
-				<string>    
-    init() {
-        if let savedId = </string>
-				<key>trailing</key>
 				<string>
-            print(savedId)
-            remainingScreens = queue.filter({ $0.id &gt; savedId
+</string>
+				<key>leading</key>
+				<string>    @Published var buttonTitle: String = "Next"
+    @Published var isNavigate: Bool = false
+</string>
+				<key>trailing</key>
+				<string>        init() {
+            loadLastWatchedScreen()
+        }
 </string>
 			</dict>
 			<key>type</key>
@@ -98,15 +55,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>55</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>46</string>
+					<string>53</string>
 					<key>StartingColumnNumber</key>
-					<string>8</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>46</string>
+					<string>52</string>
 					<key>Timestamp</key>
-					<string>773261784.874066</string>
+					<string>774630174.418448</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -122,15 +79,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>UserDefaults.standard.set(id, forKey: "screen")</string>
+				<string>        UserDefaults.standard.set(id, forKey: "screen")
+</string>
 				<key>leading</key>
 				<string>    
     func save(id: Int) {
-        </string>
+</string>
 				<key>trailing</key>
-				<string>
-    }
+				<string>    }
     
+}
 </string>
 			</dict>
 			<key>type</key>

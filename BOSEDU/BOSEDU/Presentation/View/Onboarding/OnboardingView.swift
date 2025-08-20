@@ -10,7 +10,7 @@ import UIComponents
 
 struct OnboardingView: View {
     
-    @StateObject var ovm = OnboardingViewModel()
+    @StateObject var ovm: OnboardingViewModel = OnboardingDI.make()
     
     var body: some View {
             GeometryReader { geometry in
