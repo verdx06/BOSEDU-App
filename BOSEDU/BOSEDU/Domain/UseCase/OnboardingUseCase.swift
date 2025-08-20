@@ -1,8 +1,8 @@
 //
-//  OnboardingUseCase.swift
+//  SplashScreenUseCase.swift
 //  BOSEDU
 //
-//  Created by AI on 09.08.2025.
+//  Created by Виталий Багаутдинов on 30.05.2025.
 //
 
 import Foundation

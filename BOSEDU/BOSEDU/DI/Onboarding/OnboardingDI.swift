@@ -1,10 +1,9 @@
 //
-//  OnboardingDI.swift
+//  OnboardingProgressStorageImpl.swift
 //  BOSEDU
 //
-//  Created by AI on 09.08.2025.
+//  Created by Виталий Багаутдинов on 09.08.2025.
 //
-
 import Foundation
 
 final class OnboardingDI {

@@ -34,16 +34,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>
+				<string>    
 </string>
 				<key>leading</key>
 				<string>    @Published var buttonTitle: String = "Next"
     @Published var isNavigate: Bool = false
 </string>
 				<key>trailing</key>
-				<string>        init() {
-            loadLastWatchedScreen()
-        }
+				<string>    private let useCase: OnboardingUseCase
+
+    init(useCase: OnboardingUseCase) {
 </string>
 			</dict>
 			<key>type</key>
@@ -79,16 +79,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>        UserDefaults.standard.set(id, forKey: "screen")
+				<string>    }
 </string>
 				<key>leading</key>
-				<string>    
-    func save(id: Int) {
+				<string>        save(id: index.id)
+        
 </string>
 				<key>trailing</key>
-				<string>    }
-    
-}
+				<string>    
+    private func save(id: Int) {
+        useCase.saveLastWatchedScreen(id: id)
 </string>
 			</dict>
 			<key>type</key>
